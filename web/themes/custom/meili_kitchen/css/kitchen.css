@@ -1,0 +1,196 @@
+/* Meili Kitchen: one bold move (the highlighter), everything else quiet. */
+:root {
+  --paper: #f7f5ff;
+  --card: #ffffff;
+  --ink: #1f1433;
+  --ink-soft: #5b5170;
+  --line: #e4def5;
+  --pink: #ff5caa;
+  --pink-soft: rgba(255, 92, 170, 0.42);
+  --tangerine: #ffb23f;
+  --mint: #2bc4a4;
+  --radius-pill: 999px;
+  --radius-card: 20px;
+  --font: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1rem/1.55 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 3px;
+}
+
+/* The highlighter: Meilisearch's highlighting, drawn as a marker swipe. */
+mark, .recipe-card__excerpt strong {
+  font-weight: 600;
+  background: linear-gradient(transparent 52%, var(--pink-soft) 52%, var(--pink-soft) 92%, transparent 92%);
+  color: inherit;
+  padding: 0 0.1em;
+  border-radius: 0.2em;
+}
+
+.kitchen { max-width: 1240px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2.5rem); }
+
+.kitchen__bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 0;
+}
+.kitchen__brand { font-weight: 800; font-size: 1.25rem; text-decoration: none; letter-spacing: -0.01em; }
+.kitchen__logo { display: inline-block; transform: rotate(-12deg); }
+.kitchen__nav { display: flex; gap: 1.5rem; }
+.kitchen__nav a { text-decoration: none; color: var(--ink-soft); font-weight: 600; }
+.kitchen__nav a:hover { color: var(--ink); }
+
+/* Hero: the search box is the headline. */
+.kitchen__hero { padding: clamp(1.5rem, 6vw, 4rem) 0 2rem; }
+.kitchen__hero form { display: grid; gap: 1.25rem; }
+.kitchen__hero .form-item-search label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.kitchen__hero input[name="search"] {
+  width: 100%;
+  border: 0;
+  border-bottom: 4px solid var(--ink);
+  background: transparent;
+  padding: 0.1em 0;
+  font: 800 clamp(2rem, 6vw, 4.25rem)/1.1 var(--font);
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+.kitchen__hero input[name="search"]::placeholder { color: #c9c0de; }
+.kitchen__hero input[name="search"]:focus { outline: none; border-bottom-color: var(--pink); }
+.kitchen__hint { margin: 1rem 0 0; color: var(--ink-soft); max-width: 70ch; }
+.kitchen__hint a { color: var(--ink); font-weight: 600; text-decoration-color: var(--pink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+/* Time and sort controls sit in one row under the input. */
+.kitchen__hero .form-actions { display: none; }
+.kitchen__hero form > div { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; }
+.kitchen__hero fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.kitchen__hero fieldset legend { float: left; font-weight: 600; margin-right: 0.75rem; padding-top: 0.35rem; }
+.kitchen__hero fieldset .fieldset-wrapper > div { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.kitchen__hero .form-type-radio { position: relative; }
+.kitchen__hero .form-type-radio input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.kitchen__hero .form-type-radio label {
+  display: inline-block; padding: 0.35rem 0.9rem; border-radius: var(--radius-pill);
+  border: 1.5px solid var(--line); background: var(--card); font-weight: 600; font-size: 0.95rem; cursor: pointer;
+}
+.kitchen__hero .form-type-radio input:checked + label { background: var(--ink); border-color: var(--ink); color: #fff; }
+.kitchen__hero .form-type-radio input:focus-visible + label { outline: 3px solid var(--pink); outline-offset: 2px; }
+.kitchen__hero .form-item-sort-by { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; }
+.kitchen__hero select {
+  font: 600 0.95rem var(--font); color: var(--ink); background: var(--card);
+  border: 1.5px solid var(--line); border-radius: var(--radius-pill); padding: 0.35rem 0.9rem;
+}
+
+/* Body: facets rail and results. */
+.kitchen__body { display: grid; gap: 2.5rem; padding-bottom: 4rem; }
+@media (min-width: 900px) {
+  .kitchen__body--with-rail { grid-template-columns: 220px 1fr; }
+}
+.kitchen__main { min-width: 0; transition: opacity 120ms ease; }
+.is-searching .kitchen__main { opacity: 0.55; }
+
+.kitchen__rail h2 { font-size: 1rem; margin: 0 0 0.5rem; }
+.kitchen__rail > * + * { margin-top: 2rem; }
+.kitchen__rail ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; }
+.kitchen__rail li a {
+  display: flex; justify-content: space-between; gap: 0.5rem;
+  padding: 0.3rem 0.6rem; margin: 0 -0.6rem; border-radius: 10px; text-decoration: none;
+}
+.kitchen__rail li a:hover { background: #eeeafb; }
+.kitchen__rail .facet-item__count { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.kitchen__rail .is-active a { font-weight: 600; }
+.kitchen__rail .is-active .facet-item__value::before { content: "✓ "; color: var(--pink); }
+.kitchen__rail .facet-item__status { display: none; }
+
+.view-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem; color: var(--ink-soft); }
+.meili-stats strong { color: var(--ink); font-size: 1.15rem; }
+
+.recipe-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.recipe-card {
+  position: relative; height: 100%;
+  display: grid; grid-template-rows: auto 1fr; gap: 0.9rem;
+  background: var(--card); border-radius: var(--radius-card); padding: 1.25rem;
+  border: 1.5px solid var(--line);
+}
+.recipe-card:hover { border-color: var(--ink); }
+.recipe-card:focus-within { border-color: var(--pink); }
+.recipe-card__plate, .recipe__plate {
+  width: 3.75rem; height: 3.75rem; border-radius: 50%;
+  display: grid; place-items: center; font-size: 2rem;
+  background: var(--plate, #efeafc);
+}
+.recipe-card__cuisine { margin: 0; color: var(--ink-soft); font-weight: 600; font-size: 0.9rem; }
+.recipe-card__title { margin: 0.1rem 0 0.4rem; font-size: 1.3rem; line-height: 1.2; letter-spacing: -0.015em; }
+.recipe-card__title a { text-decoration: none; }
+.recipe-card__title a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius-card); }
+.recipe-card__excerpt { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.95rem; }
+.recipe-card__facts { margin: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.fact { font-size: 0.85rem; font-weight: 600; padding: 0.15rem 0.6rem; border-radius: var(--radius-pill); background: #f1eefa; }
+.fact--rating { background: #fff3dd; color: #8a5300; }
+.fact--diet { background: #e1f7f1; color: #0c6b57; }
+
+/* Plate colors tell the cuisine. */
+.plate-italian { --plate: #ffe2e0; }
+.plate-mexican { --plate: #fff0c2; }
+.plate-japanese { --plate: #ffe3f1; }
+.plate-indian { --plate: #ffe6c9; }
+.plate-french { --plate: #e3e8ff; }
+.plate-thai { --plate: #dff6e4; }
+.plate-chinese { --plate: #ffdcd6; }
+.plate-greek { --plate: #dcefff; }
+.plate-moroccan { --plate: #ffe8d6; }
+.plate-american { --plate: #e8e3ff; }
+
+.pager { margin-top: 2rem; }
+.pager__items { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; }
+.pager__item a, .pager__item.is-active { display: inline-block; min-width: 2.4rem; text-align: center; padding: 0.35rem 0.7rem; border-radius: var(--radius-pill); text-decoration: none; border: 1.5px solid var(--line); background: var(--card); }
+.pager__item.is-active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.view-empty { font-size: 1.15rem; }
+
+/* Recipe page. */
+.recipe { max-width: 760px; }
+.recipe__back a { font-weight: 600; text-decoration-color: var(--pink); text-underline-offset: 3px; }
+.recipe__head { display: flex; gap: 1.5rem; align-items: center; margin: 1.5rem 0; }
+.recipe__plate { width: 7rem; height: 7rem; font-size: 3.75rem; flex: none; }
+.recipe__title { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.05; letter-spacing: -0.03em; margin: 0.2rem 0 0.6rem; }
+.recipe__description { font-size: 1.2rem; max-width: 62ch; }
+.recipe__subtitle { font-size: 1.1rem; margin-top: 2rem; }
+.recipe__ingredients { columns: 2 16rem; padding-left: 1.2rem; }
+.recipe__ingredients li { margin-bottom: 0.3rem; break-inside: avoid; }
+
+.kitchen__footer { border-top: 1.5px solid var(--line); padding: 1.5rem 0 2.5rem; color: var(--ink-soft); font-size: 0.9rem; }
+
+/* Small screens: facets become a scrollable row of chips. */
+@media (max-width: 899px) {
+  .kitchen__rail > * + * { margin-top: 1rem; }
+  .kitchen__rail ul { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 0.25rem; scrollbar-width: none; }
+  .kitchen__rail li a {
+    margin: 0; white-space: nowrap; gap: 0.35rem;
+    border: 1.5px solid var(--line); border-radius: var(--radius-pill); background: var(--card); padding: 0.3rem 0.8rem;
+  }
+  .kitchen__rail .is-active a { border-color: var(--ink); }
+}
+
+/* Away from the search page, the search box steps back. */
+.kitchen__hero--compact { padding: 0.5rem 0 1rem; }
+.kitchen__hero--compact input[name="search"] { font-size: 1.6rem; border-bottom-width: 2px; }
+.kitchen__hero--compact fieldset, .kitchen__hero--compact .form-item-sort-by, .kitchen__hero--compact .kitchen__hint { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * A recipe page. See meili_kitchen_preprocess_node().
+ */
+#}
+<article class="recipe plate-{{ recipe.cuisine|clean_class }}">
+  <p class="recipe__back"><a href="{{ path('<front>') }}">{{ 'All recipes'|t }}</a></p>
+  <div class="recipe__head">
+    <div class="recipe__plate" aria-hidden="true">{{ recipe.emoji }}</div>
+    <div>
+      <p class="recipe-card__cuisine">{{ recipe.cuisine }}{% if recipe.meals %}, {{ recipe.meals|join(', ')|lower }}{% endif %}</p>
+      <h1 class="recipe__title">{{ label }}</h1>
+      <p class="recipe-card__facts">
+        <span class="fact fact--time">{{ '@minutes min'|t({'@minutes': recipe.minutes}) }}</span>
+        <span class="fact fact--rating">★ {{ recipe.rating }}</span>
+        {% for diet in recipe.diets %}
+          <span class="fact fact--diet">{{ diet }}</span>
+        {% endfor %}
+      </p>
+    </div>
+  </div>
+  <p class="recipe__description">{{ recipe.description }}</p>
+  <h2 class="recipe__subtitle">{{ 'Ingredients'|t }}</h2>
+  <ul class="recipe__ingredients">
+    {% for ingredient in recipe.ingredients %}
+      <li>{{ ingredient }}</li>
+    {% endfor %}
+  </ul>
+</article>

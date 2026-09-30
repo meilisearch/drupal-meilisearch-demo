@@ -1,0 +1,11 @@
+name: 'Meili Kitchen'
+type: theme
+description: 'Theme of the Meilisearch recipe search demo.'
+core_version_requirement: ^11
+base theme: stable9
+libraries:
+  - meili_kitchen/global
+regions:
+  hero: 'Hero'
+  content: 'Content'
+  sidebar: 'Sidebar'

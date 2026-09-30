@@ -1,0 +1,2650 @@
+[
+ {
+  "title": "Margherita Pizza",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Dinner",
+   "Lunch"
+  ],
+  "total_time": 45,
+  "rating": 4.7,
+  "emoji": "🍕",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "A thin, blistered crust with San Marzano tomatoes, fresh mozzarella and basil: the pizza Naples is proud of.",
+  "ingredients": [
+   "pizza dough",
+   "San Marzano tomatoes",
+   "fresh mozzarella",
+   "basil",
+   "olive oil",
+   "sea salt"
+  ]
+ },
+ {
+  "title": "Spaghetti Carbonara",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 25,
+  "rating": 4.8,
+  "emoji": "🍝",
+  "diets": [],
+  "description": "Silky egg and pecorino sauce clinging to spaghetti, with crisp guanciale and plenty of black pepper. No cream, ever.",
+  "ingredients": [
+   "spaghetti",
+   "guanciale",
+   "egg yolks",
+   "pecorino romano",
+   "black pepper"
+  ]
+ },
+ {
+  "title": "Mushroom Risotto",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 40,
+  "rating": 4.5,
+  "emoji": "🍚",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Creamy arborio rice slowly stirred with porcini stock and finished with butter and parmesan.",
+  "ingredients": [
+   "arborio rice",
+   "porcini mushrooms",
+   "shallot",
+   "white wine",
+   "vegetable stock",
+   "parmesan",
+   "butter"
+  ]
+ },
+ {
+  "title": "Lasagna alla Bolognese",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 180,
+  "rating": 4.9,
+  "emoji": "🍝",
+  "diets": [],
+  "description": "Layers of fresh pasta, slow-cooked beef ragù and nutmeg béchamel baked until bubbling.",
+  "ingredients": [
+   "lasagna sheets",
+   "ground beef",
+   "pork",
+   "tomato passata",
+   "milk",
+   "butter",
+   "flour",
+   "nutmeg",
+   "parmesan"
+  ]
+ },
+ {
+  "title": "Pesto Genovese Trofie",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 20,
+  "rating": 4.6,
+  "emoji": "🌿",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Twisted trofie pasta tossed with bright basil pesto, potatoes and green beans, the Ligurian way.",
+  "ingredients": [
+   "trofie",
+   "basil",
+   "pine nuts",
+   "garlic",
+   "parmesan",
+   "olive oil",
+   "potatoes",
+   "green beans"
+  ]
+ },
+ {
+  "title": "Tiramisu",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 30,
+  "rating": 4.8,
+  "emoji": "🍰",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Espresso-soaked ladyfingers layered with mascarpone cream and a dusting of cocoa. Better the next day.",
+  "ingredients": [
+   "ladyfingers",
+   "espresso",
+   "mascarpone",
+   "eggs",
+   "sugar",
+   "cocoa powder",
+   "marsala"
+  ]
+ },
+ {
+  "title": "Caprese Salad",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Lunch",
+   "Snack"
+  ],
+  "total_time": 10,
+  "rating": 4.3,
+  "emoji": "🍅",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Ripe tomatoes, creamy mozzarella and basil with good olive oil. Summer on a plate.",
+  "ingredients": [
+   "tomatoes",
+   "mozzarella",
+   "basil",
+   "olive oil",
+   "balsamic vinegar",
+   "sea salt"
+  ]
+ },
+ {
+  "title": "Minestrone",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 60,
+  "rating": 4.4,
+  "emoji": "🥣",
+  "diets": [
+   "Vegetarian",
+   "Vegan"
+  ],
+  "description": "A hearty vegetable soup with beans and small pasta, even better with a spoon of pesto.",
+  "ingredients": [
+   "cannellini beans",
+   "carrots",
+   "celery",
+   "zucchini",
+   "tomatoes",
+   "ditalini",
+   "onion",
+   "garlic"
+  ]
+ },
+ {
+  "title": "Osso Buco",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 150,
+  "rating": 4.7,
+  "emoji": "🍖",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Veal shanks braised in white wine and tomato until they fall apart, topped with bright gremolata.",
+  "ingredients": [
+   "veal shanks",
+   "white wine",
+   "tomatoes",
+   "carrots",
+   "celery",
+   "lemon zest",
+   "parsley",
+   "garlic"
+  ]
+ },
+ {
+  "title": "Focaccia",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Snack",
+   "Lunch"
+  ],
+  "total_time": 240,
+  "rating": 4.6,
+  "emoji": "🍞",
+  "diets": [
+   "Vegetarian",
+   "Vegan"
+  ],
+  "description": "A dimpled, golden flatbread with rosemary, flaky salt and a generous pour of olive oil.",
+  "ingredients": [
+   "bread flour",
+   "yeast",
+   "olive oil",
+   "rosemary",
+   "flaky salt"
+  ]
+ },
+ {
+  "title": "Panna Cotta",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 20,
+  "rating": 4.5,
+  "emoji": "🍮",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "A trembling vanilla cream set with a little gelatin, served with a berry coulis.",
+  "ingredients": [
+   "cream",
+   "milk",
+   "sugar",
+   "vanilla",
+   "gelatin",
+   "raspberries"
+  ]
+ },
+ {
+  "title": "Cacio e Pepe",
+  "cuisine": "Italian",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 15,
+  "rating": 4.6,
+  "emoji": "🧀",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Three ingredients, one technique: pecorino and pepper emulsified into a glossy sauce.",
+  "ingredients": [
+   "tonnarelli",
+   "pecorino romano",
+   "black pepper"
+  ]
+ },
+ {
+  "title": "Chicken Tacos al Pastor",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 50,
+  "rating": 4.7,
+  "emoji": "🌮",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Chicken marinated in chilies and pineapple, charred and tucked into warm corn tortillas.",
+  "ingredients": [
+   "chicken thighs",
+   "guajillo chilies",
+   "pineapple",
+   "achiote",
+   "corn tortillas",
+   "onion",
+   "cilantro",
+   "lime"
+  ]
+ },
+ {
+  "title": "Guacamole",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Snack"
+  ],
+  "total_time": 10,
+  "rating": 4.8,
+  "emoji": "🥑",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "Chunky avocado with lime, onion, jalapeño and cilantro. Made right before serving.",
+  "ingredients": [
+   "avocados",
+   "lime",
+   "red onion",
+   "jalapeño",
+   "cilantro",
+   "salt"
+  ]
+ },
+ {
+  "title": "Chiles Rellenos",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 60,
+  "rating": 4.4,
+  "emoji": "🌶️",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Roasted poblano peppers stuffed with cheese, dipped in a light batter and fried.",
+  "ingredients": [
+   "poblano peppers",
+   "queso oaxaca",
+   "eggs",
+   "flour",
+   "tomato sauce"
+  ]
+ },
+ {
+  "title": "Black Bean Burrito Bowl",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Lunch"
+  ],
+  "total_time": 25,
+  "rating": 4.3,
+  "emoji": "🥙",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "Cilantro-lime rice, spiced black beans, corn salsa and avocado in one colorful bowl.",
+  "ingredients": [
+   "rice",
+   "black beans",
+   "corn",
+   "tomatoes",
+   "avocado",
+   "lime",
+   "cilantro",
+   "cumin"
+  ]
+ },
+ {
+  "title": "Chicken Enchiladas Verdes",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 55,
+  "rating": 4.6,
+  "emoji": "🫔",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Corn tortillas rolled around shredded chicken and baked under a tangy tomatillo sauce.",
+  "ingredients": [
+   "corn tortillas",
+   "chicken",
+   "tomatillos",
+   "serrano chilies",
+   "crema",
+   "queso fresco"
+  ]
+ },
+ {
+  "title": "Churros with Chocolate",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Dessert",
+   "Snack"
+  ],
+  "total_time": 35,
+  "rating": 4.7,
+  "emoji": "🍫",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Crisp, cinnamon-sugar churros with a thick hot chocolate for dipping.",
+  "ingredients": [
+   "flour",
+   "butter",
+   "eggs",
+   "cinnamon",
+   "sugar",
+   "dark chocolate",
+   "milk"
+  ]
+ },
+ {
+  "title": "Pozole Rojo",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 180,
+  "rating": 4.5,
+  "emoji": "🍲",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "A festive pork and hominy stew in a deep red chili broth, topped with radish and cabbage.",
+  "ingredients": [
+   "pork shoulder",
+   "hominy",
+   "guajillo chilies",
+   "ancho chilies",
+   "garlic",
+   "radish",
+   "cabbage",
+   "oregano"
+  ]
+ },
+ {
+  "title": "Huevos Rancheros",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Breakfast"
+  ],
+  "total_time": 20,
+  "rating": 4.5,
+  "emoji": "🍳",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Fried eggs on crisp tortillas with ranchero sauce, beans and a little crumbled cheese.",
+  "ingredients": [
+   "eggs",
+   "corn tortillas",
+   "tomatoes",
+   "jalapeño",
+   "refried beans",
+   "queso fresco"
+  ]
+ },
+ {
+  "title": "Elote",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Snack"
+  ],
+  "total_time": 15,
+  "rating": 4.6,
+  "emoji": "🌽",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Grilled corn on the cob slathered with mayo, cotija, chili powder and lime.",
+  "ingredients": [
+   "corn on the cob",
+   "mayonnaise",
+   "cotija",
+   "chili powder",
+   "lime"
+  ]
+ },
+ {
+  "title": "Fish Tacos Baja",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 30,
+  "rating": 4.6,
+  "emoji": "🐟",
+  "diets": [],
+  "description": "Beer-battered white fish with crunchy cabbage slaw and chipotle crema.",
+  "ingredients": [
+   "white fish",
+   "flour",
+   "beer",
+   "cabbage",
+   "chipotle",
+   "crema",
+   "tortillas",
+   "lime"
+  ]
+ },
+ {
+  "title": "Tres Leches Cake",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 90,
+  "rating": 4.7,
+  "emoji": "🎂",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "A light sponge soaked in three milks and crowned with whipped cream.",
+  "ingredients": [
+   "flour",
+   "eggs",
+   "sugar",
+   "evaporated milk",
+   "condensed milk",
+   "cream",
+   "vanilla"
+  ]
+ },
+ {
+  "title": "Horchata",
+  "cuisine": "Mexican",
+  "meal_types": [
+   "Drink"
+  ],
+  "total_time": 15,
+  "rating": 4.4,
+  "emoji": "🥛",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "A chilled rice and cinnamon drink, sweet and refreshing.",
+  "ingredients": [
+   "rice",
+   "cinnamon",
+   "sugar",
+   "vanilla",
+   "almond milk"
+  ]
+ },
+ {
+  "title": "Chicken Ramen",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 120,
+  "rating": 4.8,
+  "emoji": "🍜",
+  "diets": [],
+  "description": "Rich chicken broth, springy noodles, a jammy soy egg and tender chashu chicken.",
+  "ingredients": [
+   "chicken bones",
+   "ramen noodles",
+   "soy sauce",
+   "mirin",
+   "eggs",
+   "scallions",
+   "nori",
+   "ginger"
+  ]
+ },
+ {
+  "title": "Salmon Nigiri",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 60,
+  "rating": 4.7,
+  "emoji": "🍣",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Seasoned sushi rice shaped by hand and topped with fresh salmon.",
+  "ingredients": [
+   "sushi rice",
+   "rice vinegar",
+   "salmon",
+   "wasabi",
+   "tamari"
+  ]
+ },
+ {
+  "title": "Miso Soup",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Breakfast",
+   "Lunch"
+  ],
+  "total_time": 15,
+  "rating": 4.4,
+  "emoji": "🥣",
+  "diets": [
+   "Vegetarian",
+   "Vegan"
+  ],
+  "description": "A comforting dashi broth with miso, silken tofu, wakame and scallions.",
+  "ingredients": [
+   "kombu",
+   "miso paste",
+   "silken tofu",
+   "wakame",
+   "scallions"
+  ]
+ },
+ {
+  "title": "Chicken Katsu Curry",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 50,
+  "rating": 4.7,
+  "emoji": "🍛",
+  "diets": [],
+  "description": "Crisp panko chicken cutlet on rice with a mellow, sweet Japanese curry sauce.",
+  "ingredients": [
+   "chicken breast",
+   "panko",
+   "eggs",
+   "curry roux",
+   "onion",
+   "carrots",
+   "potatoes",
+   "rice"
+  ]
+ },
+ {
+  "title": "Okonomiyaki",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 30,
+  "rating": 4.5,
+  "emoji": "🥞",
+  "diets": [],
+  "description": "A savory cabbage pancake with pork belly, drizzled with okonomi sauce and mayo.",
+  "ingredients": [
+   "cabbage",
+   "flour",
+   "eggs",
+   "dashi",
+   "pork belly",
+   "okonomi sauce",
+   "kewpie mayo",
+   "bonito flakes"
+  ]
+ },
+ {
+  "title": "Vegetable Tempura",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Snack",
+   "Dinner"
+  ],
+  "total_time": 30,
+  "rating": 4.4,
+  "emoji": "🍤",
+  "diets": [
+   "Vegetarian",
+   "Vegan"
+  ],
+  "description": "Feather-light batter around sweet potato, eggplant and shiso, with a dipping sauce.",
+  "ingredients": [
+   "sweet potato",
+   "eggplant",
+   "shiso",
+   "flour",
+   "ice water",
+   "tentsuyu sauce"
+  ]
+ },
+ {
+  "title": "Matcha Cheesecake",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 300,
+  "rating": 4.6,
+  "emoji": "🍵",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "A jiggly, cloud-soft cheesecake with the gentle bitterness of matcha.",
+  "ingredients": [
+   "cream cheese",
+   "eggs",
+   "sugar",
+   "matcha",
+   "milk",
+   "flour",
+   "butter"
+  ]
+ },
+ {
+  "title": "Teriyaki Salmon",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 20,
+  "rating": 4.6,
+  "emoji": "🐟",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Pan-seared salmon glazed with a glossy homemade teriyaki sauce.",
+  "ingredients": [
+   "salmon",
+   "tamari",
+   "mirin",
+   "sake",
+   "sugar",
+   "ginger",
+   "sesame seeds"
+  ]
+ },
+ {
+  "title": "Onigiri",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Snack",
+   "Lunch"
+  ],
+  "total_time": 25,
+  "rating": 4.3,
+  "emoji": "🍙",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Rice triangles wrapped in nori with salmon, umeboshi or tuna mayo inside.",
+  "ingredients": [
+   "sushi rice",
+   "nori",
+   "salmon",
+   "umeboshi",
+   "tuna",
+   "salt"
+  ]
+ },
+ {
+  "title": "Gyoza",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Snack",
+   "Dinner"
+  ],
+  "total_time": 60,
+  "rating": 4.7,
+  "emoji": "🥟",
+  "diets": [],
+  "description": "Pork and cabbage dumplings, crisp on the bottom and steamed on top.",
+  "ingredients": [
+   "gyoza wrappers",
+   "ground pork",
+   "cabbage",
+   "garlic",
+   "ginger",
+   "soy sauce",
+   "sesame oil"
+  ]
+ },
+ {
+  "title": "Yakitori",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Dinner",
+   "Snack"
+  ],
+  "total_time": 40,
+  "rating": 4.5,
+  "emoji": "🍢",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Chicken skewers grilled over charcoal and brushed with tare.",
+  "ingredients": [
+   "chicken thighs",
+   "scallions",
+   "tamari",
+   "mirin",
+   "sake",
+   "sugar"
+  ]
+ },
+ {
+  "title": "Mochi Ice Cream",
+  "cuisine": "Japanese",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 45,
+  "rating": 4.4,
+  "emoji": "🍡",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Soft, chewy rice dough wrapped around balls of ice cream.",
+  "ingredients": [
+   "glutinous rice flour",
+   "sugar",
+   "cornstarch",
+   "ice cream"
+  ]
+ },
+ {
+  "title": "Butter Chicken",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 60,
+  "rating": 4.9,
+  "emoji": "🍛",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Tandoori chicken simmered in a velvety tomato, butter and cream sauce.",
+  "ingredients": [
+   "chicken thighs",
+   "yogurt",
+   "garam masala",
+   "tomatoes",
+   "butter",
+   "cream",
+   "fenugreek",
+   "garlic",
+   "ginger"
+  ]
+ },
+ {
+  "title": "Chana Masala",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 40,
+  "rating": 4.6,
+  "emoji": "🫘",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "Chickpeas in a tangy, spiced tomato and onion gravy.",
+  "ingredients": [
+   "chickpeas",
+   "onion",
+   "tomatoes",
+   "chana masala",
+   "ginger",
+   "garlic",
+   "cilantro"
+  ]
+ },
+ {
+  "title": "Palak Paneer",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 35,
+  "rating": 4.6,
+  "emoji": "🥬",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Cubes of paneer in a smooth, garlicky spinach sauce.",
+  "ingredients": [
+   "paneer",
+   "spinach",
+   "onion",
+   "garlic",
+   "ginger",
+   "cream",
+   "garam masala"
+  ]
+ },
+ {
+  "title": "Chicken Biryani",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 90,
+  "rating": 4.8,
+  "emoji": "🍚",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Fragrant basmati layered with spiced chicken, saffron and crispy onions.",
+  "ingredients": [
+   "basmati rice",
+   "chicken",
+   "yogurt",
+   "saffron",
+   "fried onions",
+   "mint",
+   "biryani masala"
+  ]
+ },
+ {
+  "title": "Masala Dosa",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Breakfast",
+   "Lunch"
+  ],
+  "total_time": 45,
+  "rating": 4.7,
+  "emoji": "🥞",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "A crisp fermented rice crepe filled with spiced potatoes, served with chutney.",
+  "ingredients": [
+   "dosa batter",
+   "potatoes",
+   "mustard seeds",
+   "curry leaves",
+   "turmeric",
+   "coconut chutney"
+  ]
+ },
+ {
+  "title": "Dal Tadka",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Dinner",
+   "Lunch"
+  ],
+  "total_time": 35,
+  "rating": 4.5,
+  "emoji": "🍲",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "Yellow lentils finished with a sizzling tempering of cumin, garlic and chili.",
+  "ingredients": [
+   "toor dal",
+   "cumin seeds",
+   "garlic",
+   "dried chilies",
+   "tomatoes",
+   "turmeric",
+   "ghee"
+  ]
+ },
+ {
+  "title": "Samosas",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Snack"
+  ],
+  "total_time": 60,
+  "rating": 4.6,
+  "emoji": "🥟",
+  "diets": [
+   "Vegetarian",
+   "Vegan"
+  ],
+  "description": "Flaky pastry triangles stuffed with spiced potatoes and peas.",
+  "ingredients": [
+   "flour",
+   "potatoes",
+   "peas",
+   "cumin",
+   "coriander",
+   "green chilies",
+   "oil"
+  ]
+ },
+ {
+  "title": "Mango Lassi",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Drink",
+   "Breakfast"
+  ],
+  "total_time": 5,
+  "rating": 4.7,
+  "emoji": "🥭",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "A thick, chilled blend of ripe mango, yogurt and a pinch of cardamom.",
+  "ingredients": [
+   "mango",
+   "yogurt",
+   "milk",
+   "sugar",
+   "cardamom"
+  ]
+ },
+ {
+  "title": "Aloo Gobi",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 35,
+  "rating": 4.3,
+  "emoji": "🥔",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "Potatoes and cauliflower roasted with turmeric, cumin and fresh ginger.",
+  "ingredients": [
+   "potatoes",
+   "cauliflower",
+   "turmeric",
+   "cumin",
+   "ginger",
+   "cilantro"
+  ]
+ },
+ {
+  "title": "Gulab Jamun",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 50,
+  "rating": 4.6,
+  "emoji": "🍩",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Soft milk dumplings soaked in rose and cardamom syrup.",
+  "ingredients": [
+   "milk powder",
+   "flour",
+   "ghee",
+   "sugar",
+   "rose water",
+   "cardamom"
+  ]
+ },
+ {
+  "title": "Lamb Rogan Josh",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 120,
+  "rating": 4.7,
+  "emoji": "🍖",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Tender lamb in a deep red Kashmiri chili and yogurt sauce.",
+  "ingredients": [
+   "lamb shoulder",
+   "kashmiri chili",
+   "yogurt",
+   "fennel",
+   "ginger",
+   "cardamom",
+   "cloves"
+  ]
+ },
+ {
+  "title": "Masala Chai",
+  "cuisine": "Indian",
+  "meal_types": [
+   "Drink",
+   "Breakfast"
+  ],
+  "total_time": 10,
+  "rating": 4.5,
+  "emoji": "☕",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Black tea brewed with milk, ginger and warm spices.",
+  "ingredients": [
+   "black tea",
+   "milk",
+   "ginger",
+   "cardamom",
+   "cinnamon",
+   "cloves",
+   "sugar"
+  ]
+ },
+ {
+  "title": "Croissants",
+  "cuisine": "French",
+  "meal_types": [
+   "Breakfast"
+  ],
+  "total_time": 720,
+  "rating": 4.8,
+  "emoji": "🥐",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Buttery, flaky, laminated pastry worth every minute of the wait.",
+  "ingredients": [
+   "flour",
+   "butter",
+   "milk",
+   "yeast",
+   "sugar",
+   "salt"
+  ]
+ },
+ {
+  "title": "Coq au Vin",
+  "cuisine": "French",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 150,
+  "rating": 4.7,
+  "emoji": "🍗",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Chicken braised in red wine with mushrooms, pearl onions and bacon.",
+  "ingredients": [
+   "chicken",
+   "red wine",
+   "mushrooms",
+   "pearl onions",
+   "bacon",
+   "thyme",
+   "garlic"
+  ]
+ },
+ {
+  "title": "Ratatouille",
+  "cuisine": "French",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 70,
+  "rating": 4.5,
+  "emoji": "🍆",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "Provençal summer vegetables slowly stewed with herbs and olive oil.",
+  "ingredients": [
+   "eggplant",
+   "zucchini",
+   "bell peppers",
+   "tomatoes",
+   "onion",
+   "garlic",
+   "thyme",
+   "basil"
+  ]
+ },
+ {
+  "title": "French Onion Soup",
+  "cuisine": "French",
+  "meal_types": [
+   "Dinner",
+   "Lunch"
+  ],
+  "total_time": 90,
+  "rating": 4.6,
+  "emoji": "🧅",
+  "diets": [],
+  "description": "Deeply caramelized onions in beef broth under a lid of toasted bread and gruyère.",
+  "ingredients": [
+   "onions",
+   "beef stock",
+   "white wine",
+   "baguette",
+   "gruyère",
+   "butter",
+   "thyme"
+  ]
+ },
+ {
+  "title": "Crêpes",
+  "cuisine": "French",
+  "meal_types": [
+   "Breakfast",
+   "Dessert"
+  ],
+  "total_time": 30,
+  "rating": 4.6,
+  "emoji": "🥞",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Thin, lacy pancakes with butter and sugar, jam or chocolate.",
+  "ingredients": [
+   "flour",
+   "eggs",
+   "milk",
+   "butter",
+   "sugar"
+  ]
+ },
+ {
+  "title": "Quiche Lorraine",
+  "cuisine": "French",
+  "meal_types": [
+   "Lunch"
+  ],
+  "total_time": 75,
+  "rating": 4.5,
+  "emoji": "🥧",
+  "diets": [],
+  "description": "A crisp pastry shell filled with smoky bacon and a silky egg custard.",
+  "ingredients": [
+   "shortcrust pastry",
+   "bacon",
+   "eggs",
+   "cream",
+   "gruyère",
+   "nutmeg"
+  ]
+ },
+ {
+  "title": "Beef Bourguignon",
+  "cuisine": "French",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 210,
+  "rating": 4.8,
+  "emoji": "🍷",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Beef slowly braised in Burgundy wine with carrots, mushrooms and onions.",
+  "ingredients": [
+   "beef chuck",
+   "red wine",
+   "carrots",
+   "mushrooms",
+   "pearl onions",
+   "bacon",
+   "thyme",
+   "bay leaf"
+  ]
+ },
+ {
+  "title": "Crème Brûlée",
+  "cuisine": "French",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 60,
+  "rating": 4.8,
+  "emoji": "🍮",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Cold vanilla custard under a crackly caramelized sugar crust.",
+  "ingredients": [
+   "cream",
+   "egg yolks",
+   "sugar",
+   "vanilla bean"
+  ]
+ },
+ {
+  "title": "Salade Niçoise",
+  "cuisine": "French",
+  "meal_types": [
+   "Lunch"
+  ],
+  "total_time": 25,
+  "rating": 4.4,
+  "emoji": "🥗",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Tuna, eggs, olives, green beans and potatoes with a mustardy vinaigrette.",
+  "ingredients": [
+   "tuna",
+   "eggs",
+   "olives",
+   "green beans",
+   "potatoes",
+   "tomatoes",
+   "anchovies",
+   "dijon mustard"
+  ]
+ },
+ {
+  "title": "Croque Monsieur",
+  "cuisine": "French",
+  "meal_types": [
+   "Lunch"
+  ],
+  "total_time": 20,
+  "rating": 4.4,
+  "emoji": "🥪",
+  "diets": [],
+  "description": "A toasted ham and gruyère sandwich smothered in béchamel.",
+  "ingredients": [
+   "bread",
+   "ham",
+   "gruyère",
+   "butter",
+   "flour",
+   "milk",
+   "dijon mustard"
+  ]
+ },
+ {
+  "title": "Tarte Tatin",
+  "cuisine": "French",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 75,
+  "rating": 4.7,
+  "emoji": "🍎",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Upside-down caramelized apple tart with buttery pastry.",
+  "ingredients": [
+   "apples",
+   "butter",
+   "sugar",
+   "puff pastry"
+  ]
+ },
+ {
+  "title": "Moules Marinières",
+  "cuisine": "French",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 25,
+  "rating": 4.5,
+  "emoji": "🦪",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Mussels steamed in white wine, shallots and parsley. Bread for the broth.",
+  "ingredients": [
+   "mussels",
+   "white wine",
+   "shallots",
+   "garlic",
+   "parsley",
+   "butter"
+  ]
+ },
+ {
+  "title": "Pad Thai",
+  "cuisine": "Thai",
+  "meal_types": [
+   "Dinner",
+   "Lunch"
+  ],
+  "total_time": 30,
+  "rating": 4.7,
+  "emoji": "🍜",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Stir-fried rice noodles with tamarind, shrimp, egg, peanuts and lime.",
+  "ingredients": [
+   "rice noodles",
+   "shrimp",
+   "eggs",
+   "tamarind",
+   "fish sauce",
+   "palm sugar",
+   "bean sprouts",
+   "peanuts",
+   "lime"
+  ]
+ },
+ {
+  "title": "Green Curry",
+  "cuisine": "Thai",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 35,
+  "rating": 4.7,
+  "emoji": "🍛",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Chicken and Thai eggplant in a fragrant coconut green curry with basil.",
+  "ingredients": [
+   "chicken",
+   "green curry paste",
+   "coconut milk",
+   "thai eggplant",
+   "thai basil",
+   "fish sauce"
+  ]
+ },
+ {
+  "title": "Tom Yum Soup",
+  "cuisine": "Thai",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 30,
+  "rating": 4.6,
+  "emoji": "🍲",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "A hot and sour broth with shrimp, lemongrass, galangal and lime leaves.",
+  "ingredients": [
+   "shrimp",
+   "lemongrass",
+   "galangal",
+   "kaffir lime leaves",
+   "chilies",
+   "lime",
+   "fish sauce",
+   "mushrooms"
+  ]
+ },
+ {
+  "title": "Mango Sticky Rice",
+  "cuisine": "Thai",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 40,
+  "rating": 4.8,
+  "emoji": "🥭",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "Sweet coconut sticky rice with ripe mango slices.",
+  "ingredients": [
+   "glutinous rice",
+   "coconut milk",
+   "sugar",
+   "mango",
+   "sesame seeds"
+  ]
+ },
+ {
+  "title": "Som Tam",
+  "cuisine": "Thai",
+  "meal_types": [
+   "Lunch",
+   "Snack"
+  ],
+  "total_time": 20,
+  "rating": 4.5,
+  "emoji": "🥗",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "A crunchy, fiery green papaya salad pounded with lime and chilies.",
+  "ingredients": [
+   "green papaya",
+   "chilies",
+   "garlic",
+   "lime",
+   "fish sauce",
+   "palm sugar",
+   "peanuts",
+   "cherry tomatoes"
+  ]
+ },
+ {
+  "title": "Massaman Curry",
+  "cuisine": "Thai",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 120,
+  "rating": 4.7,
+  "emoji": "🥘",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "A mild, rich curry with beef, potatoes and peanuts, scented with warm spices.",
+  "ingredients": [
+   "beef",
+   "massaman curry paste",
+   "coconut milk",
+   "potatoes",
+   "peanuts",
+   "tamarind"
+  ]
+ },
+ {
+  "title": "Thai Basil Chicken",
+  "cuisine": "Thai",
+  "meal_types": [
+   "Dinner",
+   "Lunch"
+  ],
+  "total_time": 20,
+  "rating": 4.6,
+  "emoji": "🌿",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Minced chicken stir-fried with holy basil and chilies, with a fried egg on rice.",
+  "ingredients": [
+   "ground chicken",
+   "holy basil",
+   "chilies",
+   "garlic",
+   "oyster sauce",
+   "eggs",
+   "rice"
+  ]
+ },
+ {
+  "title": "Spring Rolls",
+  "cuisine": "Thai",
+  "meal_types": [
+   "Snack"
+  ],
+  "total_time": 40,
+  "rating": 4.4,
+  "emoji": "🥢",
+  "diets": [
+   "Vegetarian",
+   "Vegan"
+  ],
+  "description": "Crispy rolls filled with glass noodles and vegetables, with sweet chili sauce.",
+  "ingredients": [
+   "spring roll wrappers",
+   "glass noodles",
+   "cabbage",
+   "carrots",
+   "mushrooms",
+   "sweet chili sauce"
+  ]
+ },
+ {
+  "title": "Tofu Red Curry",
+  "cuisine": "Thai",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 30,
+  "rating": 4.4,
+  "emoji": "🍛",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "Golden tofu and vegetables in a spicy red coconut curry.",
+  "ingredients": [
+   "tofu",
+   "red curry paste",
+   "coconut milk",
+   "bell peppers",
+   "bamboo shoots",
+   "thai basil"
+  ]
+ },
+ {
+  "title": "Thai Iced Tea",
+  "cuisine": "Thai",
+  "meal_types": [
+   "Drink"
+  ],
+  "total_time": 10,
+  "rating": 4.5,
+  "emoji": "🧋",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Strong spiced tea poured over ice with sweetened condensed milk.",
+  "ingredients": [
+   "thai tea",
+   "condensed milk",
+   "evaporated milk",
+   "sugar",
+   "ice"
+  ]
+ },
+ {
+  "title": "Kung Pao Chicken",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 25,
+  "rating": 4.6,
+  "emoji": "🥜",
+  "diets": [],
+  "description": "Chicken stir-fried with peanuts, dried chilies and Sichuan pepper.",
+  "ingredients": [
+   "chicken",
+   "peanuts",
+   "dried chilies",
+   "sichuan peppercorns",
+   "soy sauce",
+   "black vinegar",
+   "scallions"
+  ]
+ },
+ {
+  "title": "Mapo Tofu",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 25,
+  "rating": 4.7,
+  "emoji": "🌶️",
+  "diets": [],
+  "description": "Silky tofu in a numbing, spicy sauce with ground pork and doubanjiang.",
+  "ingredients": [
+   "silken tofu",
+   "ground pork",
+   "doubanjiang",
+   "sichuan peppercorns",
+   "garlic",
+   "scallions"
+  ]
+ },
+ {
+  "title": "Pork Dumplings",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Snack",
+   "Dinner"
+  ],
+  "total_time": 90,
+  "rating": 4.8,
+  "emoji": "🥟",
+  "diets": [],
+  "description": "Juicy pork and chive dumplings, boiled and served with black vinegar.",
+  "ingredients": [
+   "flour",
+   "ground pork",
+   "chives",
+   "ginger",
+   "soy sauce",
+   "sesame oil",
+   "black vinegar"
+  ]
+ },
+ {
+  "title": "Egg Fried Rice",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 15,
+  "rating": 4.4,
+  "emoji": "🍳",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Day-old rice tossed in a hot wok with egg, peas and scallions.",
+  "ingredients": [
+   "rice",
+   "eggs",
+   "peas",
+   "scallions",
+   "soy sauce",
+   "sesame oil"
+  ]
+ },
+ {
+  "title": "Char Siu",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 180,
+  "rating": 4.7,
+  "emoji": "🍖",
+  "diets": [],
+  "description": "Cantonese barbecued pork with a sticky, honeyed glaze.",
+  "ingredients": [
+   "pork shoulder",
+   "hoisin sauce",
+   "honey",
+   "five spice",
+   "soy sauce",
+   "rice wine"
+  ]
+ },
+ {
+  "title": "Hot and Sour Soup",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Lunch"
+  ],
+  "total_time": 30,
+  "rating": 4.3,
+  "emoji": "🍲",
+  "diets": [],
+  "description": "A peppery, tangy soup with tofu, mushrooms and ribbons of egg.",
+  "ingredients": [
+   "tofu",
+   "wood ear mushrooms",
+   "bamboo shoots",
+   "eggs",
+   "black vinegar",
+   "white pepper"
+  ]
+ },
+ {
+  "title": "Peking Duck Pancakes",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 240,
+  "rating": 4.8,
+  "emoji": "🦆",
+  "diets": [],
+  "description": "Crisp-skinned duck with thin pancakes, cucumber, scallions and hoisin.",
+  "ingredients": [
+   "duck",
+   "maltose",
+   "pancakes",
+   "cucumber",
+   "scallions",
+   "hoisin sauce"
+  ]
+ },
+ {
+  "title": "Scallion Pancakes",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Snack",
+   "Breakfast"
+  ],
+  "total_time": 40,
+  "rating": 4.5,
+  "emoji": "🥞",
+  "diets": [
+   "Vegetarian",
+   "Vegan"
+  ],
+  "description": "Flaky, chewy flatbreads layered with scallions and fried golden.",
+  "ingredients": [
+   "flour",
+   "scallions",
+   "sesame oil",
+   "salt"
+  ]
+ },
+ {
+  "title": "Dan Dan Noodles",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 25,
+  "rating": 4.6,
+  "emoji": "🍜",
+  "diets": [],
+  "description": "Noodles with chili oil, sesame paste and crispy pork.",
+  "ingredients": [
+   "wheat noodles",
+   "ground pork",
+   "chili oil",
+   "sesame paste",
+   "sichuan peppercorns",
+   "bok choy"
+  ]
+ },
+ {
+  "title": "Egg Tarts",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Dessert",
+   "Breakfast"
+  ],
+  "total_time": 50,
+  "rating": 4.6,
+  "emoji": "🥧",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Flaky pastry cups holding a glossy, wobbly egg custard.",
+  "ingredients": [
+   "puff pastry",
+   "eggs",
+   "milk",
+   "sugar",
+   "evaporated milk"
+  ]
+ },
+ {
+  "title": "Steamed Bao Buns",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Snack",
+   "Lunch"
+  ],
+  "total_time": 120,
+  "rating": 4.5,
+  "emoji": "🥯",
+  "diets": [],
+  "description": "Pillowy steamed buns with braised pork belly and pickles.",
+  "ingredients": [
+   "flour",
+   "yeast",
+   "pork belly",
+   "hoisin sauce",
+   "cucumber",
+   "cilantro",
+   "peanuts"
+  ]
+ },
+ {
+  "title": "Bubble Tea",
+  "cuisine": "Chinese",
+  "meal_types": [
+   "Drink"
+  ],
+  "total_time": 30,
+  "rating": 4.4,
+  "emoji": "🧋",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Milk tea with chewy brown sugar tapioca pearls.",
+  "ingredients": [
+   "black tea",
+   "milk",
+   "tapioca pearls",
+   "brown sugar"
+  ]
+ },
+ {
+  "title": "Moussaka",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 120,
+  "rating": 4.7,
+  "emoji": "🍆",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Layers of eggplant and spiced lamb under a golden béchamel.",
+  "ingredients": [
+   "eggplant",
+   "ground lamb",
+   "tomatoes",
+   "cinnamon",
+   "onion",
+   "milk",
+   "butter",
+   "nutmeg"
+  ]
+ },
+ {
+  "title": "Greek Salad",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Lunch"
+  ],
+  "total_time": 15,
+  "rating": 4.5,
+  "emoji": "🥗",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Tomatoes, cucumber, olives and a slab of feta with oregano and olive oil.",
+  "ingredients": [
+   "tomatoes",
+   "cucumber",
+   "red onion",
+   "kalamata olives",
+   "feta",
+   "oregano",
+   "olive oil"
+  ]
+ },
+ {
+  "title": "Chicken Souvlaki",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Dinner",
+   "Lunch"
+  ],
+  "total_time": 40,
+  "rating": 4.6,
+  "emoji": "🍢",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Lemon and oregano chicken skewers with tzatziki and warm pita.",
+  "ingredients": [
+   "chicken",
+   "lemon",
+   "oregano",
+   "garlic",
+   "yogurt",
+   "cucumber",
+   "pita"
+  ]
+ },
+ {
+  "title": "Spanakopita",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Lunch",
+   "Snack"
+  ],
+  "total_time": 75,
+  "rating": 4.5,
+  "emoji": "🥬",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Crisp phyllo filled with spinach, feta and dill.",
+  "ingredients": [
+   "phyllo",
+   "spinach",
+   "feta",
+   "eggs",
+   "dill",
+   "scallions",
+   "butter"
+  ]
+ },
+ {
+  "title": "Tzatziki",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Snack"
+  ],
+  "total_time": 10,
+  "rating": 4.6,
+  "emoji": "🥒",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Cool yogurt dip with cucumber, garlic and dill.",
+  "ingredients": [
+   "greek yogurt",
+   "cucumber",
+   "garlic",
+   "dill",
+   "lemon",
+   "olive oil"
+  ]
+ },
+ {
+  "title": "Baklava",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 90,
+  "rating": 4.7,
+  "emoji": "🍯",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Layers of phyllo, walnuts and pistachios soaked in honey syrup.",
+  "ingredients": [
+   "phyllo",
+   "walnuts",
+   "pistachios",
+   "butter",
+   "honey",
+   "cinnamon"
+  ]
+ },
+ {
+  "title": "Gemista",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 90,
+  "rating": 4.4,
+  "emoji": "🫑",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "Tomatoes and peppers stuffed with herbed rice and baked until tender.",
+  "ingredients": [
+   "tomatoes",
+   "bell peppers",
+   "rice",
+   "onion",
+   "mint",
+   "parsley",
+   "olive oil"
+  ]
+ },
+ {
+  "title": "Avgolemono Soup",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 40,
+  "rating": 4.5,
+  "emoji": "🍋",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "A silky chicken soup thickened with egg and brightened with lemon.",
+  "ingredients": [
+   "chicken stock",
+   "chicken",
+   "rice",
+   "eggs",
+   "lemon",
+   "dill"
+  ]
+ },
+ {
+  "title": "Greek Yogurt with Honey",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Breakfast",
+   "Dessert"
+  ],
+  "total_time": 5,
+  "rating": 4.4,
+  "emoji": "🍯",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Thick yogurt with thyme honey and toasted walnuts.",
+  "ingredients": [
+   "greek yogurt",
+   "honey",
+   "walnuts"
+  ]
+ },
+ {
+  "title": "Grilled Octopus",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 90,
+  "rating": 4.6,
+  "emoji": "🐙",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Tender octopus charred on the grill with lemon, oregano and olive oil.",
+  "ingredients": [
+   "octopus",
+   "red wine vinegar",
+   "lemon",
+   "oregano",
+   "olive oil"
+  ]
+ },
+ {
+  "title": "Loukoumades",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Dessert",
+   "Snack"
+  ],
+  "total_time": 45,
+  "rating": 4.5,
+  "emoji": "🍩",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Golden honey puffs sprinkled with cinnamon and walnuts.",
+  "ingredients": [
+   "flour",
+   "yeast",
+   "honey",
+   "cinnamon",
+   "walnuts"
+  ]
+ },
+ {
+  "title": "Lamb Kleftiko",
+  "cuisine": "Greek",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 240,
+  "rating": 4.7,
+  "emoji": "🍖",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Lamb slow-baked in parchment with garlic, lemon and potatoes.",
+  "ingredients": [
+   "lamb leg",
+   "garlic",
+   "lemon",
+   "oregano",
+   "potatoes",
+   "feta"
+  ]
+ },
+ {
+  "title": "Chicken Tagine with Lemon",
+  "cuisine": "Moroccan",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 90,
+  "rating": 4.7,
+  "emoji": "🍋",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Chicken slowly cooked with preserved lemons, green olives and saffron.",
+  "ingredients": [
+   "chicken",
+   "preserved lemons",
+   "green olives",
+   "saffron",
+   "ginger",
+   "onion",
+   "cilantro"
+  ]
+ },
+ {
+  "title": "Couscous with Vegetables",
+  "cuisine": "Moroccan",
+  "meal_types": [
+   "Dinner",
+   "Lunch"
+  ],
+  "total_time": 60,
+  "rating": 4.4,
+  "emoji": "🥕",
+  "diets": [
+   "Vegetarian",
+   "Vegan"
+  ],
+  "description": "Fluffy couscous under a stew of seven vegetables and chickpeas.",
+  "ingredients": [
+   "couscous",
+   "carrots",
+   "zucchini",
+   "turnips",
+   "chickpeas",
+   "pumpkin",
+   "ras el hanout"
+  ]
+ },
+ {
+  "title": "Harira",
+  "cuisine": "Moroccan",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 90,
+  "rating": 4.6,
+  "emoji": "🍲",
+  "diets": [
+   "Vegetarian",
+   "Vegan"
+  ],
+  "description": "A warming tomato, lentil and chickpea soup with herbs and spices.",
+  "ingredients": [
+   "lentils",
+   "chickpeas",
+   "tomatoes",
+   "celery",
+   "cilantro",
+   "parsley",
+   "cinnamon",
+   "ginger"
+  ]
+ },
+ {
+  "title": "Lamb Tagine with Apricots",
+  "cuisine": "Moroccan",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 150,
+  "rating": 4.8,
+  "emoji": "🍑",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Sweet and savory lamb with apricots, honey and toasted almonds.",
+  "ingredients": [
+   "lamb shoulder",
+   "dried apricots",
+   "honey",
+   "almonds",
+   "cinnamon",
+   "ginger",
+   "onion"
+  ]
+ },
+ {
+  "title": "Zaalouk",
+  "cuisine": "Moroccan",
+  "meal_types": [
+   "Snack",
+   "Lunch"
+  ],
+  "total_time": 40,
+  "rating": 4.4,
+  "emoji": "🍆",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "A smoky cooked eggplant and tomato salad with cumin and paprika.",
+  "ingredients": [
+   "eggplant",
+   "tomatoes",
+   "garlic",
+   "cumin",
+   "paprika",
+   "cilantro",
+   "olive oil"
+  ]
+ },
+ {
+  "title": "Shakshuka",
+  "cuisine": "Moroccan",
+  "meal_types": [
+   "Breakfast",
+   "Lunch"
+  ],
+  "total_time": 30,
+  "rating": 4.7,
+  "emoji": "🍳",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "Eggs poached in a spicy tomato and pepper sauce.",
+  "ingredients": [
+   "eggs",
+   "tomatoes",
+   "bell peppers",
+   "onion",
+   "cumin",
+   "paprika",
+   "harissa"
+  ]
+ },
+ {
+  "title": "Moroccan Mint Tea",
+  "cuisine": "Moroccan",
+  "meal_types": [
+   "Drink"
+  ],
+  "total_time": 10,
+  "rating": 4.6,
+  "emoji": "🫖",
+  "diets": [
+   "Vegetarian",
+   "Vegan",
+   "Gluten-free"
+  ],
+  "description": "Green tea with a fistful of fresh mint, poured from a height.",
+  "ingredients": [
+   "green tea",
+   "fresh mint",
+   "sugar"
+  ]
+ },
+ {
+  "title": "Msemen",
+  "cuisine": "Moroccan",
+  "meal_types": [
+   "Breakfast",
+   "Snack"
+  ],
+  "total_time": 60,
+  "rating": 4.4,
+  "emoji": "🫓",
+  "diets": [
+   "Vegetarian",
+   "Vegan"
+  ],
+  "description": "Square, flaky pan-fried flatbreads, delicious with honey.",
+  "ingredients": [
+   "flour",
+   "semolina",
+   "oil",
+   "salt"
+  ]
+ },
+ {
+  "title": "Kefta Tagine",
+  "cuisine": "Moroccan",
+  "meal_types": [
+   "Dinner"
+  ],
+  "total_time": 45,
+  "rating": 4.5,
+  "emoji": "🧆",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Spiced meatballs simmered in tomato sauce with eggs cracked on top.",
+  "ingredients": [
+   "ground beef",
+   "cumin",
+   "paprika",
+   "tomatoes",
+   "eggs",
+   "parsley"
+  ]
+ },
+ {
+  "title": "Chebakia",
+  "cuisine": "Moroccan",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 120,
+  "rating": 4.3,
+  "emoji": "🍪",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Sesame cookies folded into flowers, fried and dipped in honey.",
+  "ingredients": [
+   "flour",
+   "sesame seeds",
+   "anise",
+   "honey",
+   "orange blossom water"
+  ]
+ },
+ {
+  "title": "Classic Cheeseburger",
+  "cuisine": "American",
+  "meal_types": [
+   "Dinner",
+   "Lunch"
+  ],
+  "total_time": 25,
+  "rating": 4.6,
+  "emoji": "🍔",
+  "diets": [],
+  "description": "A smashed beef patty with melted cheddar, pickles and special sauce.",
+  "ingredients": [
+   "ground beef",
+   "cheddar",
+   "burger buns",
+   "pickles",
+   "onion",
+   "mayonnaise",
+   "ketchup"
+  ]
+ },
+ {
+  "title": "Buttermilk Pancakes",
+  "cuisine": "American",
+  "meal_types": [
+   "Breakfast"
+  ],
+  "total_time": 25,
+  "rating": 4.7,
+  "emoji": "🥞",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Tall, fluffy pancakes with maple syrup and butter.",
+  "ingredients": [
+   "flour",
+   "buttermilk",
+   "eggs",
+   "butter",
+   "baking powder",
+   "maple syrup"
+  ]
+ },
+ {
+  "title": "Mac and Cheese",
+  "cuisine": "American",
+  "meal_types": [
+   "Dinner",
+   "Lunch"
+  ],
+  "total_time": 40,
+  "rating": 4.6,
+  "emoji": "🧀",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Elbow pasta in a sharp cheddar sauce with a crunchy breadcrumb top.",
+  "ingredients": [
+   "macaroni",
+   "cheddar",
+   "milk",
+   "butter",
+   "flour",
+   "breadcrumbs"
+  ]
+ },
+ {
+  "title": "Buffalo Wings",
+  "cuisine": "American",
+  "meal_types": [
+   "Snack"
+  ],
+  "total_time": 60,
+  "rating": 4.5,
+  "emoji": "🍗",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Crispy wings tossed in hot sauce and butter, with blue cheese dip.",
+  "ingredients": [
+   "chicken wings",
+   "hot sauce",
+   "butter",
+   "blue cheese",
+   "celery"
+  ]
+ },
+ {
+  "title": "Clam Chowder",
+  "cuisine": "American",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 50,
+  "rating": 4.5,
+  "emoji": "🥣",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Creamy New England soup with clams, potatoes and bacon.",
+  "ingredients": [
+   "clams",
+   "potatoes",
+   "bacon",
+   "onion",
+   "cream",
+   "thyme"
+  ]
+ },
+ {
+  "title": "Chocolate Chip Cookies",
+  "cuisine": "American",
+  "meal_types": [
+   "Dessert",
+   "Snack"
+  ],
+  "total_time": 30,
+  "rating": 4.8,
+  "emoji": "🍪",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Crisp edges, chewy middles and puddles of chocolate.",
+  "ingredients": [
+   "flour",
+   "butter",
+   "brown sugar",
+   "eggs",
+   "chocolate chips",
+   "vanilla"
+  ]
+ },
+ {
+  "title": "Pulled Pork Sandwich",
+  "cuisine": "American",
+  "meal_types": [
+   "Lunch",
+   "Dinner"
+  ],
+  "total_time": 480,
+  "rating": 4.7,
+  "emoji": "🥪",
+  "diets": [],
+  "description": "Slow-smoked pork shoulder, pulled and piled high with coleslaw.",
+  "ingredients": [
+   "pork shoulder",
+   "barbecue rub",
+   "barbecue sauce",
+   "buns",
+   "cabbage"
+  ]
+ },
+ {
+  "title": "Apple Pie",
+  "cuisine": "American",
+  "meal_types": [
+   "Dessert"
+  ],
+  "total_time": 120,
+  "rating": 4.7,
+  "emoji": "🥧",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "A flaky double crust around cinnamon-spiced apples.",
+  "ingredients": [
+   "apples",
+   "flour",
+   "butter",
+   "sugar",
+   "cinnamon",
+   "lemon"
+  ]
+ },
+ {
+  "title": "Cobb Salad",
+  "cuisine": "American",
+  "meal_types": [
+   "Lunch"
+  ],
+  "total_time": 25,
+  "rating": 4.3,
+  "emoji": "🥗",
+  "diets": [
+   "Gluten-free"
+  ],
+  "description": "Rows of chicken, bacon, egg, avocado and blue cheese on crisp greens.",
+  "ingredients": [
+   "romaine",
+   "chicken",
+   "bacon",
+   "eggs",
+   "avocado",
+   "blue cheese",
+   "tomatoes"
+  ]
+ },
+ {
+  "title": "Blueberry Muffins",
+  "cuisine": "American",
+  "meal_types": [
+   "Breakfast",
+   "Snack"
+  ],
+  "total_time": 35,
+  "rating": 4.5,
+  "emoji": "🧁",
+  "diets": [
+   "Vegetarian"
+  ],
+  "description": "Tender muffins bursting with blueberries under a crumble top.",
+  "ingredients": [
+   "flour",
+   "blueberries",
+   "butter",
+   "sugar",
+   "eggs",
+   "milk"
+  ]
+ },
+ {
+  "title": "Avocado Toast",
+  "cuisine": "American",
+  "meal_types": [
+   "Breakfast"
+  ],
+  "total_time": 10,
+  "rating": 4.2,
+  "emoji": "🥑",
+  "diets": [
+   "Vegetarian",
+   "Vegan"
+  ],
+  "description": "Smashed avocado on sourdough with chili flakes and lemon.",
+  "ingredients": [
+   "sourdough",
+   "avocado",
+   "lemon",
+   "chili flakes",
+   "olive oil"
+  ]
+ },
+ {
+  "title": "Strawberry Milkshake",
+  "cuisine": "American",
+  "meal_types": [
+   "Drink",
+   "Dessert"
+  ],
+  "total_time": 5,
+  "rating": 4.4,
+  "emoji": "🍓",
+  "diets": [
+   "Vegetarian",
+   "Gluten-free"
+  ],
+  "description": "A thick shake of strawberries and vanilla ice cream.",
+  "ingredients": [
+   "strawberries",
+   "vanilla ice cream",
+   "milk"
+  ]
+ }
+]

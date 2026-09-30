@@ -1,0 +1,374 @@
+langcode: "en"
+status: true
+dependencies:
+  config:
+    - "search_api.index.recipes"
+  module:
+    - "search_api"
+id: "recipes"
+label: "Recipes"
+module: "views"
+description: "Recipe search, powered by Meilisearch."
+tag: ""
+base_table: "search_api_index_recipes"
+base_field: "search_api_id"
+display:
+  default:
+    id: "default"
+    display_title: "Default"
+    display_plugin: "default"
+    position: 0
+    display_options:
+      title: "Recipes"
+      access:
+        type: "none"
+        options: {  }
+      cache:
+        type: "search_api_tag"
+        options: {  }
+      query:
+        type: "search_api_query"
+        options:
+          skip_access: false
+          preserve_facet_query_args: false
+      exposed_form:
+        type: "basic"
+        options:
+          submit_button: "Search"
+          reset_button: false
+          exposed_sorts_label: "Sort by"
+          expose_sort_order: false
+      pager:
+        type: "full"
+        options:
+          items_per_page: 24
+          offset: 0
+          quantity: 7
+          tags:
+            previous: "‹"
+            next: "›"
+            first: "«"
+            last: "»"
+      style:
+        type: "default"
+        options:
+          row_class: "recipe-card-wrapper"
+          default_row_class: false
+      row:
+        type: "fields"
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ""
+          hide_empty: true
+      fields:
+        title:
+          id: "title"
+          table: "search_api_index_recipes"
+          field: "title"
+          plugin_id: "search_api_field"
+          label: ""
+          exclude: false
+          element_type: ""
+          element_default_classes: false
+          link_to_item: true
+          multi_type: "separator"
+          multi_separator: ", "
+          field_rendering: false
+          fallback_handler: "search_api"
+          fallback_options:
+            link_to_item: true
+            use_highlighting: false
+            multi_type: "separator"
+            multi_separator: ", "
+        emoji:
+          id: "emoji"
+          table: "search_api_index_recipes"
+          field: "emoji"
+          plugin_id: "search_api_field"
+          label: ""
+          exclude: false
+          element_type: ""
+          element_default_classes: false
+          link_to_item: false
+          multi_type: "separator"
+          multi_separator: ", "
+          field_rendering: false
+          fallback_handler: "search_api"
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: "separator"
+            multi_separator: ", "
+        cuisine:
+          id: "cuisine"
+          table: "search_api_index_recipes"
+          field: "cuisine"
+          plugin_id: "search_api_field"
+          label: ""
+          exclude: false
+          element_type: ""
+          element_default_classes: false
+          link_to_item: false
+          multi_type: "separator"
+          multi_separator: ", "
+          field_rendering: false
+          fallback_handler: "search_api"
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: "separator"
+            multi_separator: ", "
+        meal_type:
+          id: "meal_type"
+          table: "search_api_index_recipes"
+          field: "meal_type"
+          plugin_id: "search_api_field"
+          label: ""
+          exclude: false
+          element_type: ""
+          element_default_classes: false
+          link_to_item: false
+          multi_type: "separator"
+          multi_separator: ", "
+          field_rendering: false
+          fallback_handler: "search_api"
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: "separator"
+            multi_separator: ", "
+        diet:
+          id: "diet"
+          table: "search_api_index_recipes"
+          field: "diet"
+          plugin_id: "search_api_field"
+          label: ""
+          exclude: false
+          element_type: ""
+          element_default_classes: false
+          link_to_item: false
+          multi_type: "separator"
+          multi_separator: ", "
+          field_rendering: false
+          fallback_handler: "search_api"
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: "separator"
+            multi_separator: ", "
+        total_time:
+          id: "total_time"
+          table: "search_api_index_recipes"
+          field: "total_time"
+          plugin_id: "search_api_field"
+          label: ""
+          exclude: false
+          element_type: ""
+          element_default_classes: false
+          link_to_item: false
+          multi_type: "separator"
+          multi_separator: ", "
+          field_rendering: false
+          fallback_handler: "search_api"
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: "separator"
+            multi_separator: ", "
+        rating:
+          id: "rating"
+          table: "search_api_index_recipes"
+          field: "rating"
+          plugin_id: "search_api_field"
+          label: ""
+          exclude: false
+          element_type: ""
+          element_default_classes: false
+          link_to_item: false
+          multi_type: "separator"
+          multi_separator: ", "
+          field_rendering: false
+          fallback_handler: "search_api"
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: "separator"
+            multi_separator: ", "
+        body:
+          id: "body"
+          table: "search_api_index_recipes"
+          field: "body"
+          plugin_id: "search_api_field"
+          label: ""
+          exclude: false
+          element_type: ""
+          element_default_classes: false
+          link_to_item: false
+          multi_type: "separator"
+          multi_separator: ", "
+          field_rendering: false
+          fallback_handler: "search_api"
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: "separator"
+            multi_separator: ", "
+        search_api_excerpt:
+          id: "search_api_excerpt"
+          table: "search_api_index_recipes"
+          field: "search_api_excerpt"
+          plugin_id: "search_api"
+          label: ""
+          exclude: false
+          element_type: ""
+          element_default_classes: false
+          link_to_item: false
+      filters:
+        search_api_fulltext:
+          id: "search_api_fulltext"
+          table: "search_api_index_recipes"
+          field: "search_api_fulltext"
+          plugin_id: "search_api_fulltext"
+          operator: "and"
+          value: ""
+          group: 1
+          exposed: true
+          expose:
+            operator_id: "search_api_fulltext_op"
+            label: "Search recipes"
+            description: ""
+            use_operator: false
+            operator: "search_api_fulltext_op"
+            identifier: "search"
+            required: false
+            remember: false
+            multiple: false
+            placeholder: "Search 116 recipes"
+          is_grouped: false
+          parse_mode: "direct"
+          min_length: null
+          fields: {  }
+        total_time:
+          id: "total_time"
+          table: "search_api_index_recipes"
+          field: "total_time"
+          plugin_id: "search_api_numeric"
+          operator: "<="
+          value:
+            min: ""
+            max: ""
+            value: ""
+          group: 1
+          exposed: true
+          is_grouped: true
+          expose:
+            operator_id: "total_time_op"
+            label: "Time"
+            identifier: "time"
+            required: false
+            remember: false
+            multiple: false
+          group_info:
+            label: "Time"
+            description: ""
+            identifier: "time"
+            optional: true
+            widget: "radios"
+            multiple: false
+            remember: false
+            default_group: "All"
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: "Under 30 min"
+                operator: "<="
+                value:
+                  value: "30"
+                  min: ""
+                  max: ""
+              2:
+                title: "30 min – 1 h"
+                operator: "between"
+                value:
+                  value: ""
+                  min: "31"
+                  max: "60"
+              3:
+                title: "Over an hour"
+                operator: ">"
+                value:
+                  value: "60"
+                  min: ""
+                  max: ""
+      sorts:
+        search_api_relevance:
+          id: "search_api_relevance"
+          table: "search_api_index_recipes"
+          field: "search_api_relevance"
+          plugin_id: "search_api"
+          order: "DESC"
+          exposed: true
+          expose:
+            label: "Best match"
+            field_identifier: "relevance"
+        rating:
+          id: "rating"
+          table: "search_api_index_recipes"
+          field: "rating"
+          plugin_id: "search_api"
+          order: "DESC"
+          exposed: true
+          expose:
+            label: "Top rated"
+            field_identifier: "rating"
+        total_time:
+          id: "total_time"
+          table: "search_api_index_recipes"
+          field: "total_time"
+          plugin_id: "search_api"
+          order: "ASC"
+          exposed: true
+          expose:
+            label: "Quickest"
+            field_identifier: "quickest"
+      header:
+        stats:
+          id: "stats"
+          table: "views"
+          field: "meilisearch_demo_stats"
+          plugin_id: "meilisearch_demo_stats"
+          empty: true
+      empty:
+        area_text_custom:
+          id: "area_text_custom"
+          table: "views"
+          field: "area_text_custom"
+          plugin_id: "text_custom"
+          empty: true
+          content: "No recipe matches this search. Try fewer filters, or a different word."
+      arguments: {  }
+      use_ajax: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - "languages:language_interface"
+        - "url"
+        - "url.query_args"
+      tags: {  }
+  page_1:
+    id: "page_1"
+    display_title: "Page"
+    display_plugin: "page"
+    position: 1
+    display_options:
+      path: "recipes"
+      exposed_block: true
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - "languages:language_interface"
+        - "url"
+        - "url.query_args"
+      tags: {  }

@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for the Meilisearch demo.
+ */
+
+declare(strict_types=1);
+
+use Drupal\meilisearch_demo\DemoSetup;
+
+/**
+ * Implements hook_install().
+ */
+function meilisearch_demo_install(bool $is_syncing): void {
+  if (!$is_syncing) {
+    \Drupal::classResolver(DemoSetup::class)->run();
+  }
+}

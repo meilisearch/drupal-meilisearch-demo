@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Theme functions of Meili Kitchen.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_preprocess_HOOK() for views_view_fields.
+ */
+function meili_kitchen_preprocess_views_view_fields(array &$variables): void {
+  if ($variables['view']->id() !== 'recipes') {
+    return;
+  }
+  $plain = static fn(string $id): string => isset($variables['fields'][$id])
+    ? trim(strip_tags((string) $variables['fields'][$id]->content))
+    : '';
+  $variables['card'] = [
+    'emoji' => $plain('emoji'),
+    'cuisine' => $plain('cuisine'),
+    'meals' => array_filter(array_map('trim', explode(',', $plain('meal_type')))),
+    'diets' => array_filter(array_map('trim', explode(',', $plain('diet')))),
+    'minutes' => (int) $plain('total_time'),
+    'rating' => $plain('rating'),
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.
+ */
+function meili_kitchen_preprocess_node(array &$variables): void {
+  $node = $variables['node'];
+  if ($node->bundle() !== 'recipe') {
+    return;
+  }
+  $labels = static fn(string $field): array => array_map(
+    static fn($item) => $item->entity?->label(),
+    iterator_to_array($node->get($field)),
+  );
+  $variables['recipe'] = [
+    'emoji' => $node->get('field_emoji')->value,
+    'cuisine' => $labels('field_cuisine')[0] ?? '',
+    'meals' => $labels('field_meal_type'),
+    'diets' => $labels('field_diet'),
+    'minutes' => (int) $node->get('field_total_time')->value,
+    'rating' => $node->get('field_rating')->value,
+    'description' => $node->get('body')->value,
+    'ingredients' => array_column($node->get('field_ingredients')->getValue(), 'value'),
+  ];
+}

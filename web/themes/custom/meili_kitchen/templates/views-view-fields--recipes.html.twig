@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * One recipe card. See meili_kitchen_preprocess_views_view_fields().
+ */
+#}
+{% set has_excerpt = fields.search_api_excerpt.content|render|striptags|trim is not empty %}
+<article class="recipe-card plate-{{ card.cuisine|clean_class }}">
+  <div class="recipe-card__plate" aria-hidden="true">{{ card.emoji }}</div>
+  <div class="recipe-card__text">
+    <p class="recipe-card__cuisine">{{ card.cuisine }}</p>
+    <h2 class="recipe-card__title">{{ fields.title.content }}</h2>
+    <p class="recipe-card__excerpt">
+      {% if has_excerpt %}{{ fields.search_api_excerpt.content }}{% else %}{{ fields.body.content|render|striptags|trim }}{% endif %}
+    </p>
+    <p class="recipe-card__facts">
+      <span class="fact fact--time">{{ '@minutes min'|t({'@minutes': card.minutes}) }}</span>
+      <span class="fact fact--rating" aria-label="{{ 'Rated @rating out of 5'|t({'@rating': card.rating}) }}">★ {{ card.rating }}</span>
+      {% for diet in card.diets %}
+        <span class="fact fact--diet">{{ diet }}</span>
+      {% endfor %}
+    </p>
+  </div>
+</article>

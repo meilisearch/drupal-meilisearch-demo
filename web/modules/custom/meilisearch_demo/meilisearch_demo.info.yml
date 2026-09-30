@@ -1,0 +1,15 @@
+name: 'Meilisearch demo'
+type: module
+description: 'Sets up the Meili Kitchen recipe search demo.'
+core_version_requirement: ^11
+package: 'Demo'
+dependencies:
+  - drupal:block
+  - drupal:node
+  - drupal:options
+  - drupal:taxonomy
+  - drupal:text
+  - drupal:views
+  - facets:facets
+  - meilisearch:meilisearch
+  - search_api:search_api

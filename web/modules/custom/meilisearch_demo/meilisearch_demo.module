@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Hooks of the Meilisearch demo.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter() for views_exposed_form.
+ */
+function meilisearch_demo_form_views_exposed_form_alter(array &$form, FormStateInterface $form_state): void {
+  if (($form['#id'] ?? '') !== 'views-exposed-form-recipes-page-1') {
+    return;
+  }
+  if (isset($form['time']['#options']['All'])) {
+    $form['time']['#options']['All'] = t('Any time');
+  }
+  $form['search']['#attributes']['aria-label'] = t('Search recipes');
+  $form['search']['#attributes']['autocomplete'] = 'off';
+}

@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Recipe results as a grid.
+ */
+#}
+<ol class="recipe-grid">
+  {% for row in rows %}
+    <li class="recipe-grid__item">{{ row.content }}</li>
+  {% endfor %}
+</ol>

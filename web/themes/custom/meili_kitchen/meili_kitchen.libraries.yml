@@ -1,0 +1,11 @@
+global:
+  css:
+    theme:
+      'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap': { type: external }
+      css/kitchen.css: {}
+  js:
+    js/live-search.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/drupal.debounce
