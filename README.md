@@ -76,7 +76,7 @@ The next `up` installs everything again.
 
 - **Port already in use:** set `DEMO_PORT` or `MEILISEARCH_PORT` in `.env`.
 - **"400 Bad Request" in the browser:** fixed in the image (browsers send every `localhost` cookie to every port, which can exceed Apache's default header size). Rebuild with `docker compose up --build`, or use the OrbStack URL.
-- **Search feels slow:** pages are rendered by Drupal on each keystroke; on a busy machine that takes a few hundred milliseconds. The pill shows Meilisearch's share.
+- **Search feels slow:** each search fetches the next page from Drupal in the background (about 50–250 ms here; Meilisearch's share is a few milliseconds, shown in the pill). A busy machine slows Drupal down first.
 - **The install fails at the Meilisearch step:** check `docker compose logs meilisearch`, then `docker compose down -v && docker compose up`.
 - **The build fails on `drupal/meilisearch`:** `MEILISEARCH_MODULE_PATH` must point at the module's root, the folder with its `composer.json`.
 

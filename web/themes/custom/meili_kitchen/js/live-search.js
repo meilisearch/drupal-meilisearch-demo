@@ -29,6 +29,15 @@
     });
   }
 
+  /**
+   * Fetches a results page and swaps the regions.
+   *
+   * @param {string} url
+   *   The page to show.
+   * @param {boolean|null} push
+   *   TRUE adds a history entry, FALSE replaces the current one, NULL (back
+   *   and forward) leaves history alone and restores the form from the page.
+   */
   async function load(url, push) {
     if (controller) {
       controller.abort();
@@ -40,7 +49,12 @@
       const response = await fetch(url, { headers: { Accept: 'text/html' }, signal });
       const doc = new DOMParser().parseFromString(await response.text(), 'text/html');
       // Before the swap: behaviors of the new regions read the URL.
-      window.history[push ? 'pushState' : 'replaceState']({}, '', url);
+      if (push !== null) {
+        window.history[push ? 'pushState' : 'replaceState']({}, '', url);
+      }
+      else {
+        restoreForm(doc);
+      }
       REGIONS.forEach((selector) => {
         const current = document.querySelector(selector);
         const next = doc.querySelector(selector);
@@ -56,6 +70,30 @@
         window.location.href = url;
       }
     }
+  }
+
+  /**
+   * Copies the search box, time and sort values of a fetched page.
+   */
+  function restoreForm(doc) {
+    const form = document.querySelector('form[id^="views-exposed-form-recipes-page-1"]');
+    const next = doc.querySelector('form[id^="views-exposed-form-recipes-page-1"]');
+    if (!form || !next) {
+      return;
+    }
+    form.querySelector('input[name="search"]').value = next.querySelector('input[name="search"]').value;
+    next.querySelectorAll('input[type="radio"]:checked, select').forEach((field) => {
+      const current = field.tagName === 'SELECT'
+        ? form.querySelector(`select[name="${field.name}"]`)
+        : form.querySelector(`input[name="${field.name}"][value="${field.value}"]`);
+      if (current && field.tagName === 'SELECT') {
+        current.value = field.value;
+      }
+      else if (current) {
+        current.checked = true;
+      }
+    });
+    markChips(form, form.querySelector('input[name="search"]'));
   }
 
   /**
@@ -164,7 +202,7 @@
           event.preventDefault();
           load(link.href, true);
         });
-        window.addEventListener('popstate', () => window.location.reload());
+        window.addEventListener('popstate', () => load(window.location.href, null));
       });
       syncHood();
 
