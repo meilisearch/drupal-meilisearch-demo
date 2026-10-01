@@ -25,6 +25,9 @@ if [ ! -f "$marker" ]; then
     --site-name="Meili Kitchen" \
     --account-name=admin --account-pass=admin
 
+  # Search API replaces core Search, which would also index every node.
+  $drush pm:uninstall search -y
+
   echo "[demo] Setting up recipes, search and facets..."
   $drush pm:install meilisearch_demo -y
   $drush cache:rebuild
