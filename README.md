@@ -11,7 +11,7 @@ docker compose up --build
 
 The first start installs Drupal, creates the recipes and indexes them, which takes a minute or two. Then open <http://localhost:8080>. On OrbStack, <http://drupal.drupal-meilisearch-demo.orb.local> works too.
 
-To log in, use `admin` / `admin`.
+To log in, use `admin` / `admin` (a deployed demo uses its own password, see [Deploy](#deploy)).
 
 ## A two-minute demo
 
@@ -63,6 +63,27 @@ This syncs the theme, the demo module and the module's `src/`. Clear caches afte
 ```bash
 docker compose exec drupal vendor/bin/drush cr
 ```
+
+## Deploy
+
+`fly.toml` runs the demo on [Fly.io](https://fly.io) with a [Meilisearch Cloud](https://cloud.meilisearch.com) project. The image installs `drupal/meilisearch` from drupal.org, and the site lives on a 1 GB volume (SQLite database and uploads).
+
+```bash
+fly apps create meili-kitchen
+fly volumes create drupal_files --region cdg --size 1 --app meili-kitchen
+fly secrets set --app meili-kitchen \
+  MEILISEARCH_URL=https://ms-xxxxxxxx.fra.meilisearch.io \
+  MEILISEARCH_API_KEY=... \
+  DRUPAL_ADMIN_PASSWORD="$(openssl rand -base64 18)"
+fly deploy
+```
+
+The first start installs Drupal and indexes the recipes into `meili_kitchen_recipes`, which takes a few minutes; `fly logs` shows `[demo] Ready` when it is done. The demo is then at <https://meili-kitchen.fly.dev>.
+
+- **Admin password:** the `DRUPAL_ADMIN_PASSWORD` secret, applied on every start. Read it back with `fly ssh console -C 'printenv DRUPAL_ADMIN_PASSWORD'`.
+- **Another app name or domain:** change `app` and `TRUSTED_HOST_PATTERNS` in `fly.toml`; Drupal answers only to the host names listed there.
+- **Another index prefix:** change `MEILISEARCH_INDEX_PREFIX`, so the demo never touches other indexes of the Cloud project.
+- **Start over:** `fly volumes destroy` the volume, create a new one and deploy again.
 
 ## Reset
 

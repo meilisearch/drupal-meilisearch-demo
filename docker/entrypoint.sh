@@ -23,7 +23,7 @@ if [ ! -f "$marker" ]; then
   echo "[demo] Installing Drupal..."
   $drush site:install standard -y \
     --site-name="Meili Kitchen" \
-    --account-name=admin --account-pass=admin
+    --account-name=admin --account-pass="${DRUPAL_ADMIN_PASSWORD:-admin}"
 
   # Search API replaces core Search, which would also index every node.
   $drush pm:uninstall search -y
@@ -34,7 +34,14 @@ if [ ! -f "$marker" ]; then
 
   touch "$marker"
   chown -R www-data:www-data "$site/files" config
-  echo "[demo] Ready: search at http://localhost:${DEMO_PORT:-8080}/recipes (admin / admin)"
+  echo "[demo] Ready: search at http://localhost:${DEMO_PORT:-8080}/recipes"
+fi
+
+# A deployed demo sets its admin password as a secret: apply it on every
+# start, so changing the secret changes the password.
+if [ -n "${DRUPAL_ADMIN_PASSWORD:-}" ]; then
+  $drush user:password admin "$DRUPAL_ADMIN_PASSWORD" >/dev/null
+  chown -R www-data:www-data "$site/files"
 fi
 
 # Warm Drupal's caches in the background once Apache is up, so the first
