@@ -187,7 +187,7 @@ class DemoSetup implements ContainerInjectionInterface {
     $plugins = \Drupal::service('search_api.plugin_helper');
     $index->addProcessor($plugins->createProcessorPlugin($index, 'entity_status'));
     $index->addProcessor($plugins->createProcessorPlugin($index, 'meilisearch_highlighting', [
-      'fields' => ['body', 'ingredients'],
+      'fields' => ['title', 'body', 'ingredients'],
       'pre_tag' => '<strong>',
       'post_tag' => '</strong>',
       'crop_length' => 18,
@@ -294,6 +294,18 @@ class DemoSetup implements ContainerInjectionInterface {
   protected function createContent(): void {
     $path = \Drupal::service('extension.list.module')->getPath('meilisearch_demo') . '/data/recipes.json';
     $recipes = json_decode(file_get_contents($path), TRUE);
+    // Alternate cuisines, so browsing without a search looks varied.
+    $by_cuisine = [];
+    foreach ($recipes as $recipe) {
+      $by_cuisine[$recipe['cuisine']][] = $recipe;
+    }
+    $recipes = [];
+    while ($by_cuisine = array_filter($by_cuisine)) {
+      foreach ($by_cuisine as &$list) {
+        $recipes[] = array_shift($list);
+      }
+      unset($list);
+    }
     foreach ($recipes as $i => $recipe) {
       Node::create([
         'type' => 'recipe',

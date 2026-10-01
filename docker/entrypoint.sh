@@ -14,7 +14,7 @@ if [ ! -f "$marker" ]; then
   done
 
   echo "[demo] Installing Drupal..."
-  mkdir -p "$site/files"
+  mkdir -p "$site/files" config/sync
   $drush site:install standard -y \
     --db-url="sqlite://localhost//opt/drupal/web/sites/default/files/.ht.sqlite" \
     --site-name="Meili Kitchen" \
@@ -27,7 +27,7 @@ if [ ! -f "$marker" ]; then
   $drush cache:rebuild
 
   touch "$marker"
-  chown -R www-data:www-data "$site/files"
+  chown -R www-data:www-data "$site/files" config
   echo "[demo] Ready: search at http://localhost:${DEMO_PORT:-8080}/recipes (admin / admin)"
 fi
 

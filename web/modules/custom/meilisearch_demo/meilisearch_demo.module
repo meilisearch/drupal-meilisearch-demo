@@ -7,7 +7,11 @@
 
 declare(strict_types=1);
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\search_api\Query\QueryInterface;
+use Drupal\search_api\Query\ResultSetInterface;
 
 /**
  * Implements hook_form_FORM_ID_alter() for views_exposed_form.
@@ -19,6 +23,91 @@ function meilisearch_demo_form_views_exposed_form_alter(array &$form, FormStateI
   if (isset($form['time']['#options']['All'])) {
     $form['time']['#options']['All'] = t('Any time');
   }
-  $form['search']['#attributes']['aria-label'] = t('Search recipes');
-  $form['search']['#attributes']['autocomplete'] = 'off';
+
+  $form['search']['#type'] = 'search';
+  $form['search']['#attributes'] += [
+    'aria-label' => t('Search recipes'),
+    'autocomplete' => 'off',
+    'spellcheck' => 'false',
+    'enterkeyhint' => 'search',
+  ];
+  // The search box, with a clear button and a "/" shortcut hint.
+  $form['search']['#prefix'] = '<div class="kitchen-search">';
+  $box = [
+    'clear' => [
+      '#type' => 'html_tag',
+      '#tag' => 'button',
+      '#value' => '×',
+      '#attributes' => [
+        'type' => 'button',
+        'class' => ['kitchen-search__clear'],
+        'aria-label' => t('Clear the search'),
+      ],
+    ],
+    'key' => [
+      '#markup' => '<kbd class="kitchen-search__key" aria-hidden="true">/</kbd>',
+      '#suffix' => '</div>',
+    ],
+  ];
+
+  // Searches that show what Meilisearch does, one click each.
+  $tries = [
+    'chiken' => t('typo'),
+    'tirami' => t('prefix'),
+    '"coconut milk"' => t('phrase'),
+    'curry -chicken' => t('exclude'),
+    'vegan dessert' => t('tags'),
+  ];
+  $chips = [];
+  foreach ($tries as $keys => $label) {
+    $chips[] = [
+      '#type' => 'link',
+      '#title' => [
+        '#markup' => '<span class="try__keys">' . Html::escape($keys) . '</span> <span class="try__label">' . $label . '</span>',
+      ],
+      '#url' => Url::fromRoute('view.recipes.page_1', [], ['query' => ['search' => $keys]]),
+      '#attributes' => ['class' => ['try'], 'data-try' => $keys],
+    ];
+  }
+  $tries_element = [
+    '#type' => 'container',
+    '#attributes' => ['class' => ['kitchen-tries']],
+    'label' => ['#markup' => '<span class="kitchen-tries__label">' . t('Try') . '</span>'],
+    'chips' => $chips,
+  ];
+
+  // Right after the search box.
+  $position = array_search('search', array_keys($form), TRUE) + 1;
+  $form = array_slice($form, 0, $position, TRUE) + $box + ['tries' => $tries_element] + $form;
+
+  // Time and sort form the toolbar above the results.
+  if (isset($form['time'], $form['sort_by'])) {
+    $form['time']['#prefix'] = '<div class="kitchen-controls">';
+    $form['sort_by']['#suffix'] = '</div>';
+  }
+}
+
+/**
+ * Implements hook_meilisearch_search_params_alter().
+ *
+ * Records what drupal/meilisearch sends, for the "Under the hood" panel of
+ * the search page. Nothing is changed.
+ */
+function meilisearch_demo_meilisearch_search_params_alter(array &$params, QueryInterface $query, array $context): void {
+  $requests = &drupal_static('meilisearch_demo_requests', []);
+  $requests[] = ['context' => $context, 'params' => $params];
+}
+
+/**
+ * Implements hook_search_api_results_alter().
+ *
+ * Keeps the recorded parameters with the results, so cached results still
+ * have them.
+ */
+function meilisearch_demo_search_api_results_alter(ResultSetInterface &$results): void {
+  $requests = &drupal_static('meilisearch_demo_requests', []);
+  if ($requests) {
+    $results->setExtraData('meilisearch_demo_requests', $requests);
+    $requests = [];
+  }
 }

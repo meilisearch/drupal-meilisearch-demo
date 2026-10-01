@@ -4,7 +4,9 @@
  * Page layout: brand bar, search hero, facets rail and results.
  */
 #}
+{% set on_search = is_front or ('/recipes' in path('<current>')) %}
 <div class="kitchen">
+  <div class="kitchen__progress" aria-hidden="true"></div>
   <header class="kitchen__bar">
     <a class="kitchen__brand" href="{{ path('<front>') }}" rel="home">
       <span class="kitchen__logo" aria-hidden="true">🍳</span> Meili Kitchen
@@ -12,7 +14,8 @@
     <nav class="kitchen__nav" aria-label="{{ 'Site'|t }}">
       <a href="{{ path('<front>') }}">{{ 'Recipes'|t }}</a>
       {% if logged_in %}
-        <a href="{{ path('search_api.overview') }}">{{ 'Search settings'|t }}</a>
+        <a href="{{ path('entity.search_api_index.canonical', {'search_api_index': 'recipes'}) }}">{{ 'Search settings'|t }}</a>
+        <a href="{{ path('user.logout') }}">{{ 'Log out'|t }}</a>
       {% else %}
         <a href="{{ path('user.login') }}">{{ 'Log in'|t }}</a>
       {% endif %}
@@ -20,15 +23,12 @@
   </header>
 
   {% if page.hero %}
-    {% set on_search = is_front or ('/recipes' in path('<current>')) %}
     <section class="kitchen__hero{{ on_search ? '' : ' kitchen__hero--compact' }}">
+      {% if on_search %}
+        <p class="kitchen__eyebrow">{{ 'Drupal 11 · Search API · Meilisearch'|t }}</p>
+        <h1 class="kitchen__title">{{ 'What are we cooking?'|t }}</h1>
+      {% endif %}
       {{ page.hero }}
-      {% set typo = path('view.recipes.page_1', {}, {'query': {'search': 'chiken'}}) %}
-      {% set phrase = path('view.recipes.page_1', {}, {'query': {'search': '"coconut milk"'}}) %}
-      {% set exclude = path('view.recipes.page_1', {}, {'query': {'search': 'curry -chicken'}}) %}
-      <p class="kitchen__hint">
-        {% trans %}Misspell it (<a href="{{ typo }}">chiken</a>), look for a phrase (<a href="{{ phrase }}">"coconut milk"</a>) or leave something out (<a href="{{ exclude }}">curry -chicken</a>).{% endtrans %}
-      </p>
     </section>
   {% endif %}
 
@@ -44,6 +44,6 @@
   </div>
 
   <footer class="kitchen__footer">
-    {% trans %}Search runs on <a href="https://www.meilisearch.com">Meilisearch</a> through the <a href="https://www.drupal.org/project/meilisearch">drupal/meilisearch</a> Search API backend. Recipes written for this demo.{% endtrans %}
+    <p>{% trans %}Every search goes through Views and Search API to <a href="https://www.meilisearch.com">Meilisearch</a>, with the <a href="https://www.drupal.org/project/meilisearch">drupal/meilisearch</a> backend. Recipes written for this demo.{% endtrans %}</p>
   </footer>
 </div>

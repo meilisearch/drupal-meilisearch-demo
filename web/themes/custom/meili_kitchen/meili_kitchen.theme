@@ -7,6 +7,10 @@
 
 declare(strict_types=1);
 
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Render\Markup;
+
 /**
  * Implements hook_preprocess_HOOK() for views_view_fields.
  */
@@ -15,7 +19,7 @@ function meili_kitchen_preprocess_views_view_fields(array &$variables): void {
     return;
   }
   $plain = static fn(string $id): string => isset($variables['fields'][$id])
-    ? trim(strip_tags((string) $variables['fields'][$id]->content))
+    ? trim(Html::decodeEntities(strip_tags((string) $variables['fields'][$id]->content)))
     : '';
   $variables['card'] = [
     'emoji' => $plain('emoji'),
@@ -24,7 +28,31 @@ function meili_kitchen_preprocess_views_view_fields(array &$variables): void {
     'diets' => array_filter(array_map('trim', explode(',', $plain('diet')))),
     'minutes' => (int) $plain('total_time'),
     'rating' => $plain('rating'),
+    'title' => $plain('title'),
+    'url' => NULL,
+    'excerpt' => NULL,
   ];
+
+  $item = $variables['row']->_item ?? NULL;
+  if (!$item) {
+    return;
+  }
+  $entity = $item->getOriginalObject()?->getValue();
+  if ($entity instanceof EntityInterface) {
+    $variables['card']['url'] = $entity->toUrl()->toString();
+  }
+  // Highlights from the "Meilisearch highlighting" processor: escaped values
+  // with <strong> around the matches. The title gets its own; the
+  // description and ingredients make the excerpt.
+  $highlighted = $item->getExtraData('highlighted_fields', []);
+  if (!empty($highlighted['title'][0])) {
+    $variables['card']['title'] = Markup::create($highlighted['title'][0]);
+  }
+  $snippets = array_merge($highlighted['body'] ?? [], $highlighted['ingredients'] ?? []);
+  if ($snippets) {
+    $snippets = array_map(static fn(string $s): string => preg_replace('/^[\s…]+|[\s…]+$/u', '', $s), array_slice($snippets, 0, 2));
+    $variables['card']['excerpt'] = Markup::create('… ' . implode(' … ', $snippets) . ' …');
+  }
 }
 
 /**

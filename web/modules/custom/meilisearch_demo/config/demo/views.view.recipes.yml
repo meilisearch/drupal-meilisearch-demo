@@ -244,7 +244,7 @@ display:
             required: false
             remember: false
             multiple: false
-            placeholder: "Search 116 recipes"
+            placeholder: "Search recipes, ingredients, cuisines…"
           is_grouped: false
           parse_mode: "direct"
           min_length: null
@@ -346,7 +346,7 @@ display:
           field: "area_text_custom"
           plugin_id: "text_custom"
           empty: true
-          content: "No recipe matches this search. Try fewer filters, or a different word."
+          content: "<div class=\"kitchen-empty\"><p class=\"kitchen-empty__plate\">🥄</p><p class=\"kitchen-empty__title\">Nothing in the pantry for that.</p><p>Try another word, or fewer filters.</p></div>"
       arguments: {  }
       use_ajax: false
     cache_metadata:

@@ -46,6 +46,8 @@ services:
           target: /opt/meilisearch-module/src
         - action: rebuild
           path: ./Dockerfile
+        - action: rebuild
+          path: ./docker
 
 volumes:
   meili_data:

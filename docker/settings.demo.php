@@ -14,3 +14,6 @@ $config['search_api.server.meilisearch']['backend_config']['api_key'] = getenv('
 // A local demo: accept any host name (localhost, OrbStack domains...).
 $settings['trusted_host_patterns'] = ['.*'];
 $settings['config_sync_directory'] = '../config/sync';
+
+// No mail server in the demo: keep outgoing mail in the state store.
+$config['system.mail']['interface']['default'] = 'test_mail_collector';
