@@ -2,6 +2,8 @@
 
 A recipe search site built with Drupal 11 and [`drupal/meilisearch`](https://www.drupal.org/project/meilisearch), the Meilisearch backend for Search API. One command gives you 116 recipes, typo-tolerant search that updates as you type, facets and highlighted excerpts.
 
+![Meili Kitchen: searching "chiken" finds 16 chicken recipes in 26 ms, with highlights and cuisine facets](docs/screenshot.png)
+
 ## Quick start
 
 ```bash
