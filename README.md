@@ -108,3 +108,7 @@ The next `up` installs everything again.
 ## Not covered here
 
 Semantic and hybrid search (they need an embedder), Cloud click analytics, location search and multilingual content are described in the module's documentation.
+
+## License
+
+GPL-2.0-or-later, like Drupal. See [LICENSE.txt](LICENSE.txt).
