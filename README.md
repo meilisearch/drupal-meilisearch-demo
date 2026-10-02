@@ -5,9 +5,13 @@ A recipe search site built with Drupal 11 and [`drupal/meilisearch`](https://www
 ## Quick start
 
 ```bash
-cp .env.example .env    # set MEILISEARCH_MODULE_PATH if the module is elsewhere
+git clone https://github.com/meilisearch/drupal-meilisearch-demo.git
+cd drupal-meilisearch-demo
+cp .env.example .env
 docker compose up --build
 ```
+
+You only need Docker. The image installs `drupal/meilisearch` from drupal.org and runs Meilisearch next to Drupal.
 
 The first start installs Drupal, creates the recipes and indexes them, which takes a minute or two. Then open <http://localhost:8080>. On OrbStack, <http://drupal.drupal-meilisearch-demo.orb.local> works too.
 
@@ -52,9 +56,17 @@ Live search is a small script: it fetches the next results page from Drupal and 
 
 ## Working on the module
 
-`MEILISEARCH_MODULE_PATH` points at a checkout of `drupal/meilisearch`, installed as a Composer path repository. Keep it in sync while you edit:
+To try changes to `drupal/meilisearch`, build the demo from a local checkout of the module instead of the drupal.org release. In `.env`:
 
 ```bash
+COMPOSE_FILE=compose.yaml:compose.module.yaml
+MEILISEARCH_MODULE_PATH=../meilisearch-drupal
+```
+
+Then rebuild and keep it in sync while you edit:
+
+```bash
+docker compose up --build -d
 docker compose watch
 ```
 
@@ -91,7 +103,7 @@ The next `up` installs everything again.
 - **"400 Bad Request" in the browser:** fixed in the image (browsers send every `localhost` cookie to every port, which can exceed Apache's default header size). Rebuild with `docker compose up --build`, or use the OrbStack URL.
 - **Search feels slow:** each search fetches the next page from Drupal in the background (about 50–250 ms here; Meilisearch's share is a few milliseconds, shown in the pill). A busy machine slows Drupal down first.
 - **The install fails at the Meilisearch step:** check `docker compose logs meilisearch`, then `docker compose down -v && docker compose up`.
-- **The build fails on `drupal/meilisearch`:** `MEILISEARCH_MODULE_PATH` must point at the module's root, the folder with its `composer.json`.
+- **The build fails on `drupal/meilisearch` with `compose.module.yaml`:** `MEILISEARCH_MODULE_PATH` must point at the module's root, the folder with its `composer.json`.
 
 ## Not covered here
 

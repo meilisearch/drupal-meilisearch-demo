@@ -5,6 +5,8 @@
 services:
   drupal:
     build:
+      args:
+        MEILISEARCH_MODULE_SOURCE: local
       additional_contexts:
         module: ${MEILISEARCH_MODULE_PATH:?set MEILISEARCH_MODULE_PATH to your drupal/meilisearch checkout}
     develop:
