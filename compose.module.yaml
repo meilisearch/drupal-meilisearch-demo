@@ -1,0 +1,14 @@
+# Builds the demo with a local checkout of drupal/meilisearch instead of the
+# drupal.org release, and live-syncs its src/. Enable it in .env:
+#   COMPOSE_FILE=compose.yaml:compose.module.yaml
+#   MEILISEARCH_MODULE_PATH=../meilisearch-drupal
+services:
+  drupal:
+    build:
+      additional_contexts:
+        module: ${MEILISEARCH_MODULE_PATH:?set MEILISEARCH_MODULE_PATH to your drupal/meilisearch checkout}
+    develop:
+      watch:
+        - action: sync
+          path: ${MEILISEARCH_MODULE_PATH}/src
+          target: /opt/meilisearch-module/src

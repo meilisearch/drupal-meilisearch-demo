@@ -1,6 +1,7 @@
 # Meili Kitchen: drupal/meilisearch demo.
 #   docker compose up --build      # then open http://localhost:8080
-#   docker compose watch           # live-sync theme, demo module and the Meilisearch module
+#   docker compose watch           # live-sync the theme and the demo module
+# To work on the module itself, see compose.module.yaml.
 services:
   meilisearch:
     image: getmeili/meilisearch:${MEILISEARCH_VERSION:-v1.54}
@@ -20,8 +21,6 @@ services:
   drupal:
     build:
       context: .
-      additional_contexts:
-        module: ${MEILISEARCH_MODULE_PATH:-../../_sdk/meilisearch-drupal}
     environment:
       MEILISEARCH_URL: http://meilisearch:7700
       MEILISEARCH_API_KEY: ${MEILI_MASTER_KEY:-meili-kitchen-demo-key}
@@ -41,9 +40,6 @@ services:
         - action: sync
           path: ./web/modules/custom
           target: /opt/drupal/web/modules/custom
-        - action: sync
-          path: ${MEILISEARCH_MODULE_PATH:-../../_sdk/meilisearch-drupal}/src
-          target: /opt/meilisearch-module/src
         - action: rebuild
           path: ./Dockerfile
         - action: rebuild
