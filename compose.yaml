@@ -25,6 +25,8 @@ services:
       MEILISEARCH_URL: http://meilisearch:7700
       MEILISEARCH_API_KEY: ${MEILI_MASTER_KEY:-meili-kitchen-demo-key}
       DEMO_PORT: ${DEMO_PORT:-8080}
+      # Locally, admin / admin can log in. The image leaves it off.
+      DRUPAL_LOGIN_FORM: ${DRUPAL_LOGIN_FORM:-on}
     ports:
       - "${DEMO_PORT:-8080}:80"
     volumes:

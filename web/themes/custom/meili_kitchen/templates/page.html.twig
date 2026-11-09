@@ -16,7 +16,7 @@
       {% if logged_in %}
         <a href="{{ path('entity.search_api_index.canonical', {'search_api_index': 'recipes'}) }}">{{ 'Search settings'|t }}</a>
         <a href="{{ path('user.logout') }}">{{ 'Log out'|t }}</a>
-      {% else %}
+      {% elseif login_form %}
         <a href="{{ path('user.login') }}">{{ 'Log in'|t }}</a>
       {% endif %}
     </nav>
