@@ -10,6 +10,15 @@ declare(strict_types=1);
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Render\Markup;
+use Drupal\Core\Site\Settings;
+
+/**
+ * Implements hook_preprocess_HOOK() for page.
+ */
+function meili_kitchen_preprocess_page(array &$variables): void {
+  // A deployed demo has no login form (see the demo module).
+  $variables['login_form'] = (bool) Settings::get('meilisearch_demo_login_form', FALSE);
+}
 
 /**
  * Implements hook_preprocess_HOOK() for views_view_fields.

@@ -17,7 +17,7 @@ You only need Docker. The image installs `drupal/meilisearch` from drupal.org an
 
 The first start installs Drupal, creates the recipes and indexes them, which takes a minute or two. Then open <http://localhost:8080>. On OrbStack, <http://drupal.drupal-meilisearch-demo.orb.local> works too.
 
-To log in, use `admin` / `admin` (a deployed demo sets its own, see [Deploy](#deploy)).
+To log in, use `admin` / `admin`. A deployed demo has no login form, see [Deploy](#deploy).
 
 ## A two-minute demo
 
@@ -35,7 +35,7 @@ To log in, use `admin` / `admin` (a deployed demo sets its own, see [Deploy](#de
 3. **Open *Under the hood*.** It shows the request drupal/meilisearch sent for this page: the query, the filter built from the facets, the sort, highlighting. Keep it open while you type and click.
 4. **Pick two cuisines.** Cuisine is an OR facet: the filter becomes `(cuisine = "Indian" OR cuisine = "Thai")` and the other cuisines keep their counts, through a second query in the same multi-search.
 5. **Filter and sort:** *Under 30 min*, *Top rated*, *Quickest*.
-6. **Edit a recipe.** Log in (`admin` / `admin`), change a title, search for it: it is indexed on save.
+6. **Edit a recipe** (locally). Log in (`admin` / `admin`), change a title, search for it: it is indexed on save.
 
 Press <kbd>/</kbd> to jump to the search box and <kbd>Esc</kbd> to clear it.
 
@@ -88,6 +88,13 @@ The image runs anywhere that runs a container with a persistent disk. It install
 | `DRUPAL_ADMIN_PASSWORD` | The admin password, applied on every start |
 | `TRUSTED_HOST_PATTERNS` | The site's host names as regular expressions, comma-separated, for example `^demo\.example\.com$` |
 | `MEILISEARCH_INDEX_PREFIX` | Optional: an index prefix, so the demo never touches other indexes of the project |
+| `DRUPAL_LOGIN_FORM` | Leave unset. The image answers 404 on the login and password forms, so a public demo shows no login panel to brute-force. `on` brings them back; `compose.yaml` sets it for local use |
+
+To reach the admin of a deployed demo, ask for a one-time login link from inside the container:
+
+```bash
+vendor/bin/drush user:login --uri=https://demo.example.com
+```
 
 The container listens on port 80. The first start installs Drupal and indexes the recipes, which takes a few minutes; the logs show `[demo] Ready` when it is done.
 

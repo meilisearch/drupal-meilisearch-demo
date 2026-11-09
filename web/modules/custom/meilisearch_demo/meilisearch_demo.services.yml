@@ -1,0 +1,5 @@
+services:
+  meilisearch_demo.login_form_subscriber:
+    class: Drupal\meilisearch_demo\EventSubscriber\LoginFormSubscriber
+    tags:
+      - { name: event_subscriber }

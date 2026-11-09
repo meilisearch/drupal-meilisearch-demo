@@ -44,6 +44,11 @@ if [ -n "${DRUPAL_ADMIN_PASSWORD:-}" ]; then
   chown -R www-data:www-data "$site/files"
 fi
 
+# The image may bring new code (services, templates) to an installed site,
+# and cached pages may predate it: start from fresh caches.
+$drush cache:rebuild >/dev/null
+chown -R www-data:www-data "$site/files"
+
 # Warm Drupal's caches in the background once Apache is up, so the first
 # searches of a demo are as quick as the next ones.
 (
