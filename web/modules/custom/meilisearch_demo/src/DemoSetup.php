@@ -235,11 +235,8 @@ class DemoSetup implements ContainerInjectionInterface {
         'weights' => ['pre_query' => -10, 'build' => -10],
         'settings' => [],
       ]);
-      $facet->addProcessor([
-        'processor_id' => 'count_widget_order',
-        'weights' => ['sort' => 30],
-        'settings' => ['sort' => 'DESC'],
-      ]);
+      // By name, not by count: values keep their place as counts change
+      // while typing and filtering.
       $facet->addProcessor([
         'processor_id' => 'display_value_widget_order',
         'weights' => ['sort' => 40],

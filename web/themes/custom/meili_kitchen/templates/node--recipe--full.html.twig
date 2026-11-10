@@ -5,7 +5,7 @@
  */
 #}
 <article class="recipe plate-{{ recipe.cuisine|clean_class }}">
-  <p class="recipe__back"><a href="{{ path('<front>') }}">{{ 'All recipes'|t }}</a></p>
+  <p class="recipe__back"><a href="{{ path('<front>') }}" data-kitchen-back data-label-results="{{ 'Back to results'|t }}">{{ 'All recipes'|t }}</a></p>
   <div class="recipe__head">
     <div class="recipe__plate" aria-hidden="true">{{ recipe.emoji }}</div>
     <div>

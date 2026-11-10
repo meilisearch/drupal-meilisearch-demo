@@ -46,14 +46,14 @@ a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible
 }
 
 /* The highlighter: Meilisearch's highlighting, drawn as a marker swipe. */
-mark, .recipe-card__title strong, .recipe-card__excerpt strong {
+mark, .recipe-card__title strong, .recipe-card__excerpt strong, .recipe-card__match strong {
   font-weight: inherit;
   background: linear-gradient(transparent 55%, var(--pink-soft) 55%, var(--pink-soft) 92%, transparent 92%);
   color: inherit;
   padding: 0 0.08em;
   border-radius: 0.15em;
 }
-.recipe-card__excerpt strong { font-weight: 600; color: var(--ink); }
+.recipe-card__excerpt strong, .recipe-card__match strong { font-weight: 600; color: var(--ink); }
 
 .kitchen { max-width: 1280px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2.5rem); }
 
@@ -68,7 +68,7 @@ mark, .recipe-card__title strong, .recipe-card__excerpt strong {
 
 /* Brand bar. */
 .kitchen__bar { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 0; }
-.kitchen__brand { font-weight: 800; font-size: 1.25rem; text-decoration: none; letter-spacing: -0.01em; }
+.kitchen__brand { display: inline-flex; align-items: center; gap: 0.45rem; font-weight: 800; font-size: 1.25rem; text-decoration: none; letter-spacing: -0.01em; }
 .kitchen__logo { display: inline-block; transform: rotate(-12deg); }
 .kitchen__nav { display: flex; gap: 1.5rem; }
 .kitchen__nav a { text-decoration: none; color: var(--ink-soft); font-weight: 600; }
@@ -88,7 +88,7 @@ mark, .recipe-card__title strong, .recipe-card__excerpt strong {
 .kitchen__hero form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
 .kitchen__hero .form-actions { display: none; }
 
-.kitchen-search { position: relative; max-width: 860px; }
+.kitchen-search { position: relative; max-width: 860px; scroll-margin-top: 0.75rem; }
 .kitchen-search .form-item { margin: 0; }
 .kitchen__hero input[name="search"] {
   -webkit-appearance: none; appearance: none;
@@ -176,7 +176,7 @@ mark, .recipe-card__title strong, .recipe-card__excerpt strong {
   .kitchen__hero:not(.kitchen__hero--compact) .kitchen-controls { margin-left: calc(var(--rail) + var(--gap)); }
   .kitchen__rail { position: sticky; top: 1.25rem; align-self: start; max-height: calc(100vh - 2.5rem); overflow-y: auto; padding-right: 0.25rem; }
 }
-.kitchen__main { min-width: 0; transition: opacity 120ms ease; }
+.kitchen__main { min-width: 0; transition: opacity 120ms ease; scroll-margin-top: 1.25rem; }
 .is-searching .kitchen__main { opacity: 0.6; }
 
 /* Facets: checkboxes with counts. */
@@ -206,7 +206,6 @@ mark, .recipe-card__title strong, .recipe-card__excerpt strong {
 .kitchen__rail .facet-item__count {
   color: var(--ink-faint); font-size: 0.85rem; font-variant-numeric: tabular-nums;
 }
-.kitchen__rail .facet-item__status { display: none; }
 .kitchen__clear {
   display: inline-block; margin-bottom: 0.25rem; font-weight: 600; font-size: 0.9rem;
   text-decoration-color: var(--pink); text-decoration-thickness: 2px; text-underline-offset: 3px;
@@ -281,6 +280,8 @@ mark, .recipe-card__title strong, .recipe-card__excerpt strong {
 .recipe-card__title a { text-decoration: none; }
 .recipe-card__title a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius-card); }
 .recipe-card__excerpt { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 0.93rem; flex: 1; }
+.recipe-card__excerpt:has(+ .recipe-card__match) { flex: none; margin-bottom: 0.4rem; }
+.recipe-card__match { flex: 1; margin: 0 0 0.9rem; color: var(--ink-faint); font-size: 0.88rem; }
 .recipe-card__facts, .recipe-card__diets { margin: 0; display: flex; flex-wrap: wrap; gap: 0.35rem; }
 .recipe-card__facts { justify-content: flex-end; }
 .fact { font-size: 0.82rem; font-weight: 600; padding: 0.15rem 0.6rem; border-radius: var(--radius-pill); background: #f1eefa; white-space: nowrap; }
@@ -301,9 +302,10 @@ mark, .recipe-card__title strong, .recipe-card__excerpt strong {
 
 .pager { margin-top: 2.5rem; }
 .pager__items { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; padding: 0; margin: 0; }
-.pager__item a, .pager__item.is-active { display: inline-block; min-width: 2.5rem; text-align: center; padding: 0.4rem 0.75rem; border-radius: var(--radius-pill); text-decoration: none; border: 1.5px solid var(--line); background: var(--card); font-weight: 600; }
+.pager__item a { display: inline-block; min-width: 2.5rem; text-align: center; padding: 0.4rem 0.75rem; border-radius: var(--radius-pill); text-decoration: none; border: 1.5px solid var(--line); background: var(--card); font-weight: 600; }
 .pager__item a:hover { border-color: var(--ink); }
-.pager__item.is-active { background: var(--ink); color: #fff; border-color: var(--ink); }
+/* Drupal 11 renders the current page as a link with aria-current. */
+.pager__item.is-active a { background: var(--ink); color: #fff; border-color: var(--ink); cursor: default; }
 
 .kitchen-empty { text-align: center; padding: 3rem 1rem; border: 1.5px dashed var(--line); border-radius: var(--radius-card); background: rgba(255, 255, 255, 0.5); }
 .kitchen-empty p { margin: 0.25rem 0; color: var(--ink-soft); }
@@ -325,19 +327,42 @@ mark, .recipe-card__title strong, .recipe-card__excerpt strong {
 .kitchen__footer { border-top: 1.5px solid var(--line); padding: 1.5rem 0 2.5rem; color: var(--ink-soft); font-size: 0.9rem; }
 .kitchen__footer p { margin: 0; }
 
-/* Small screens: facets become scrollable rows of chips. */
+/* The "Filters" button only exists on small screens. */
+.kitchen__filters-toggle { display: none; }
+
+/* Small screens: facets fold behind "Filters" and become scrollable rows of
+   chips. Scrollable rows run to the screen edge, so a cut chip hints at more. */
 @media (max-width: 899px) {
+  .kitchen__eyebrow { display: none; }
   .kitchen__hero input[name="search"] { height: 3.6rem; font-size: 1.1rem; padding-right: 3.5rem; border-radius: 18px; }
   .kitchen-search__key { display: none; }
   .kitchen-search__clear { right: 0.85rem; }
   .kitchen-tries { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -1rem; padding: 0 1rem; }
   .try { white-space: nowrap; }
   .kitchen-controls { margin-top: 0.5rem; }
-  .kitchen-controls fieldset { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+  .kitchen-controls fieldset { max-width: none; width: calc(100% + 2rem); margin: 0 -1rem; padding: 0 1rem; overflow-x: auto; scrollbar-width: none; }
   .kitchen-controls .fieldset-wrapper > div { flex-wrap: nowrap; white-space: nowrap; }
+  .js .kitchen__filters-toggle {
+    display: inline-flex; align-items: center; gap: 0.45rem; justify-self: start; cursor: pointer;
+    padding: 0.45rem 1rem; border-radius: var(--radius-pill);
+    border: 1.5px solid var(--line); background: var(--card); color: var(--ink);
+    font: 600 0.92rem var(--font);
+  }
+  .js .kitchen__filters-toggle::before {
+    content: ""; width: 0.9rem; height: 0.9rem;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%231f1433' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M2 4h12M4.5 8h7M7 12h2'/%3E%3C/svg%3E") no-repeat center / contain;
+  }
+  .js .kitchen__filters-toggle[hidden] { display: none; }
+  .js .kitchen__filters-toggle[aria-expanded="true"] { border-color: var(--ink); }
+  .kitchen__filters-count:empty { display: none; }
+  .kitchen__filters-count {
+    min-width: 1.35rem; padding: 0 0.4rem; border-radius: var(--radius-pill);
+    background: var(--ink); color: #fff; font-size: 0.8rem; line-height: 1.35rem; text-align: center;
+  }
+  .js body:not(.show-filters) .kitchen__rail { display: none; }
   .kitchen__rail > * + * { margin-top: 0.75rem; }
   .kitchen__rail h2 { margin-bottom: 0.35rem; }
-  .kitchen__rail ul { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 0.25rem; scrollbar-width: none; }
+  .kitchen__rail ul { display: flex; gap: 0.4rem; overflow-x: auto; padding: 0 1rem 0.25rem; margin: 0 -1rem; scrollbar-width: none; }
   .kitchen__rail li a {
     margin: 0; white-space: nowrap; gap: 0.4rem;
     border: 1.5px solid var(--line); border-radius: var(--radius-pill); background: var(--card); padding: 0.3rem 0.8rem;

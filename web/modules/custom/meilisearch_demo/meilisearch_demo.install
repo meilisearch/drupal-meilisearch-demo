@@ -7,6 +7,7 @@
 
 declare(strict_types=1);
 
+use Drupal\facets\Entity\Facet;
 use Drupal\meilisearch_demo\DemoSetup;
 
 /**
@@ -15,5 +16,15 @@ use Drupal\meilisearch_demo\DemoSetup;
 function meilisearch_demo_install(bool $is_syncing): void {
   if (!$is_syncing) {
     \Drupal::classResolver(DemoSetup::class)->run();
+  }
+}
+
+/**
+ * Sorts facet values by name only, so they keep their place as counts change.
+ */
+function meilisearch_demo_update_11001(): void {
+  foreach (Facet::loadMultiple(['cuisine', 'meal_type', 'diet']) as $facet) {
+    $facet->removeProcessor('count_widget_order');
+    $facet->save();
   }
 }
