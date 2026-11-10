@@ -30,6 +30,21 @@
   }
 
   /**
+   * Updates the "Filters" button of small screens: open state, active count.
+   */
+  function syncFilters() {
+    const toggle = document.querySelector('.kitchen__filters-toggle');
+    const rail = document.querySelector('[data-kitchen-facets]');
+    if (!toggle || !rail) {
+      return;
+    }
+    const active = rail.querySelectorAll('li a.is-active').length;
+    toggle.hidden = !rail.querySelector('li a');
+    toggle.setAttribute('aria-expanded', document.body.classList.contains('show-filters') ? 'true' : 'false');
+    toggle.querySelector('[data-kitchen-filters-count]').textContent = active ? active : '';
+  }
+
+  /**
    * Fetches a results page and swaps the regions.
    *
    * @param {string} url
@@ -64,6 +79,7 @@
         }
       });
       syncHood();
+      syncFilters();
       document.body.classList.remove('is-searching');
     } catch (e) {
       if (e.name !== 'AbortError') {
@@ -120,6 +136,50 @@
       chip.classList.toggle('is-current', chip.dataset.try === input.value.trim());
     });
   }
+
+  /**
+   * Recipe pages: "All recipes" returns to the search the visitor came from.
+   */
+  Drupal.behaviors.kitchenBackToResults = {
+    attach(context) {
+      // Away from the search page, live search is off: the clear button only
+      // empties the box.
+      once('kitchen-clear', '.kitchen__hero--compact .kitchen-search__clear', context).forEach((button) => {
+        button.addEventListener('click', () => {
+          const input = button.closest('.kitchen-search').querySelector('input[name="search"]');
+          input.value = '';
+          input.focus();
+        });
+      });
+
+      once('kitchen-back', '[data-kitchen-back]', context).forEach((link) => {
+        let from;
+        try {
+          from = new URL(document.referrer);
+        } catch (e) {
+          return;
+        }
+        if (from.origin !== window.location.origin || !(from.pathname === '/' || from.pathname.startsWith('/recipes'))) {
+          return;
+        }
+        link.href = from.pathname + from.search;
+        if (from.search) {
+          link.textContent = link.dataset.labelResults;
+        }
+        const input = document.querySelector('.kitchen__hero input[name="search"]');
+        if (input && !input.value) {
+          input.value = from.searchParams.get('search') || '';
+        }
+        // Going back also restores where the visitor was in the results.
+        link.addEventListener('click', (event) => {
+          if (!event.metaKey && !event.ctrlKey && !event.shiftKey && window.history.length > 1) {
+            event.preventDefault();
+            window.history.back();
+          }
+        });
+      });
+    },
+  };
 
   Drupal.behaviors.kitchenLiveSearch = {
     attach(context) {
@@ -179,8 +239,20 @@
         });
 
         markChips(form, input);
-        if (!input.value && window.matchMedia('(min-width: 900px)').matches) {
-          input.focus({ preventScroll: true });
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          if (!input.value) {
+            input.focus({ preventScroll: true });
+          }
+        }
+        else {
+          // Small screens: a placeholder that fits, and the search box moves
+          // to the top while typing, so the results show above the keyboard.
+          input.placeholder = Drupal.t('Search recipes…');
+          input.addEventListener('focus', () => {
+            if (input.getBoundingClientRect().top > 24) {
+              input.closest('.kitchen-search').scrollIntoView({ block: 'start', behavior: 'smooth' });
+            }
+          });
         }
       });
 
@@ -195,16 +267,29 @@
             syncHood();
             return;
           }
+          if (event.target.closest('.kitchen__filters-toggle')) {
+            document.body.classList.toggle('show-filters');
+            syncFilters();
+            return;
+          }
           const link = event.target.closest('[data-kitchen-facets] a, [data-kitchen-results] .pager a');
           if (!link || event.metaKey || event.ctrlKey || event.shiftKey) {
             return;
           }
           event.preventDefault();
-          load(link.href, true);
+          const paging = link.closest('.pager');
+          load(link.href, true).then(() => {
+            // A new page starts at its first recipe, not at the pager.
+            const results = document.querySelector('[data-kitchen-results]');
+            if (paging && results && results.getBoundingClientRect().top < 0) {
+              results.scrollIntoView({ block: 'start' });
+            }
+          });
         });
         window.addEventListener('popstate', () => load(window.location.href, null));
       });
       syncHood();
+      syncFilters();
 
       // "Clear filters" once a facet is active.
       const rails = context.matches && context.matches('[data-kitchen-facets]')

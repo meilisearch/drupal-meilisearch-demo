@@ -44,8 +44,10 @@ if [ -n "${DRUPAL_ADMIN_PASSWORD:-}" ]; then
   chown -R www-data:www-data "$site/files"
 fi
 
-# The image may bring new code (services, templates) to an installed site,
-# and cached pages may predate it: start from fresh caches.
+# The image may bring new code (services, templates, update hooks) to an
+# installed site, and cached pages may predate it: apply the updates and
+# start from fresh caches.
+$drush updatedb -y >/dev/null
 $drush cache:rebuild >/dev/null
 chown -R www-data:www-data "$site/files"
 

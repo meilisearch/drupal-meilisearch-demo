@@ -34,7 +34,11 @@
 
   <div class="kitchen__body{{ page.sidebar ? ' kitchen__body--with-rail' }}">
     {% if page.sidebar %}
-      <aside class="kitchen__rail" data-kitchen-facets aria-label="{{ 'Filters'|t }}">
+      {# Small screens: the facets fold behind this button (see live-search.js). #}
+      <button type="button" class="kitchen__filters-toggle" aria-expanded="false" aria-controls="kitchen-filters">
+        {{ 'Filters'|t }} <span class="kitchen__filters-count" data-kitchen-filters-count></span>
+      </button>
+      <aside class="kitchen__rail" id="kitchen-filters" data-kitchen-facets aria-label="{{ 'Filters'|t }}">
         {{ page.sidebar }}
       </aside>
     {% endif %}

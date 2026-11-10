@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * A facet value, drawn as a checkbox by the theme.
+ *
+ * The checkmark is only drawn, so an active value also says "Selected" to
+ * screen readers.
+ */
+#}
+{% if is_active %}
+  <span class="facet-item__status visually-hidden">{{ 'Selected:'|t }}</span>
+{% endif %}
+<span class="facet-item__value">{{ value }}</span>
+{% if show_count %}
+  <span class="facet-item__count">({{ count }})</span>
+{% endif %}

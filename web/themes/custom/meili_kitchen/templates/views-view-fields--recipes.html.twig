@@ -20,6 +20,9 @@
     <p class="recipe-card__excerpt{{ card.excerpt ? ' recipe-card__excerpt--match' }}">
       {{ card.excerpt ?: fields.body.content|render|striptags|trim }}
     </p>
+    {% if card.ingredients %}
+      <p class="recipe-card__match">{{ 'With @ingredients'|t({'@ingredients': card.ingredients}) }}</p>
+    {% endif %}
     {% if card.diets %}
       <p class="recipe-card__diets">
         {% for diet in card.diets %}

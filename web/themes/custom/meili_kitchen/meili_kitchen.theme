@@ -40,6 +40,7 @@ function meili_kitchen_preprocess_views_view_fields(array &$variables): void {
     'title' => $plain('title'),
     'url' => NULL,
     'excerpt' => NULL,
+    'ingredients' => NULL,
   ];
 
   $item = $variables['row']->_item ?? NULL;
@@ -51,17 +52,54 @@ function meili_kitchen_preprocess_views_view_fields(array &$variables): void {
     $variables['card']['url'] = $entity->toUrl()->toString();
   }
   // Highlights from the "Meilisearch highlighting" processor: escaped values
-  // with <strong> around the matches. The title gets its own; the
-  // description and ingredients make the excerpt.
+  // with <strong> around the matches. The title and the description get
+  // their own. When only ingredients matched, a line names them, so the card
+  // shows why it matched. Meilisearch adds "…" only where it cropped.
   $highlighted = $item->getExtraData('highlighted_fields', []);
+  $words = meili_kitchen_query_words((string) ($variables['view']->getExposedInput()['search'] ?? ''));
+  array_walk_recursive($highlighted, static function (&$value) use ($words): void {
+    $value = meili_kitchen_whole_words((string) $value, $words);
+  });
   if (!empty($highlighted['title'][0])) {
     $variables['card']['title'] = Markup::create($highlighted['title'][0]);
   }
-  $snippets = array_merge($highlighted['body'] ?? [], $highlighted['ingredients'] ?? []);
-  if ($snippets) {
-    $snippets = array_map(static fn(string $s): string => preg_replace('/^[\s…]+|[\s…]+$/u', '', $s), array_slice($snippets, 0, 2));
-    $variables['card']['excerpt'] = Markup::create('… ' . implode(' … ', $snippets) . ' …');
+  if (!empty($highlighted['body'][0])) {
+    $variables['card']['excerpt'] = Markup::create(trim($highlighted['body'][0]));
   }
+  elseif (!empty($highlighted['ingredients'])) {
+    $variables['card']['ingredients'] = Markup::create(implode(', ', array_map('trim', array_slice($highlighted['ingredients'], 0, 3))));
+  }
+}
+
+/**
+ * The words of a search, lowercased and without accents.
+ */
+function meili_kitchen_query_words(string $search): array {
+  $plain = mb_strtolower(\Drupal::transliteration()->transliterate($search, 'en'));
+  return preg_split('/[^\p{L}\p{N}]+/u', $plain, -1, PREG_SPLIT_NO_EMPTY);
+}
+
+/**
+ * Highlights the whole word on typo matches.
+ *
+ * On a typo, Meilisearch highlights as many characters as the query word has:
+ * "chiken" marks "Chicke" in "Chicken". A highlight that is not one of the
+ * query words is such a match, and is extended to the end of the word. One
+ * that is a query word is a prefix match ("tirami" in "Tiramisu") and stays.
+ *
+ * @param string $html
+ *   An escaped value with <strong> around the matches.
+ * @param string[] $words
+ *   The query words, from meili_kitchen_query_words().
+ */
+function meili_kitchen_whole_words(string $html, array $words): string {
+  return preg_replace_callback('#<strong>([^<]*)</strong>([\p{L}\p{N}]+)#u', static function (array $match) use ($words): string {
+    $marked = meili_kitchen_query_words(Html::decodeEntities($match[1]));
+    if (count($marked) === 1 && in_array($marked[0], $words, TRUE)) {
+      return $match[0];
+    }
+    return '<strong>' . $match[1] . $match[2] . '</strong>';
+  }, $html) ?? $html;
 }
 
 /**
