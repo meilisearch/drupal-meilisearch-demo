@@ -31,7 +31,8 @@ FROM ${MEILISEARCH_MODULE_SOURCE}
 
 COPY docker /opt/drupal/docker
 RUN cp docker/php/demo.ini /usr/local/etc/php/conf.d/zz-demo.ini \
- && cp docker/apache/demo.conf /etc/apache2/conf-enabled/zz-demo.conf
+ && cp docker/apache/demo.conf /etc/apache2/conf-enabled/zz-demo.conf \
+ && a2enmod headers
 COPY web/modules/custom /opt/drupal/web/modules/custom
 COPY web/themes/custom /opt/drupal/web/themes/custom
 
