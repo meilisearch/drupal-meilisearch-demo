@@ -1,0 +1,6 @@
+
+# Meili Kitchen: every filter, search and page combination of /recipes is
+# its own URL, so a crawler that follows them never runs out. The plain
+# /recipes page and the recipe pages stay crawlable.
+User-agent: *
+Disallow: /recipes?

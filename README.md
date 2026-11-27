@@ -96,7 +96,7 @@ To reach the admin of a deployed demo, ask for a one-time login link from inside
 vendor/bin/drush user:login --uri=https://demo.example.com
 ```
 
-Every response carries `X-Robots-Tag: noindex, nofollow`, so search engines keep the demo out of their results.
+Every response carries `X-Robots-Tag: noindex, nofollow`, so search engines keep the demo out of their results. `robots.txt` also blocks the `/recipes?` filter and search URLs, so crawlers do not walk through every filter combination.
 
 The container listens on port 80. The first start installs Drupal and indexes the recipes, which takes a few minutes; the logs show `[demo] Ready` when it is done.
 
