@@ -33,6 +33,8 @@ COPY docker /opt/drupal/docker
 RUN cp docker/php/demo.ini /usr/local/etc/php/conf.d/zz-demo.ini \
  && cp docker/apache/demo.conf /etc/apache2/conf-enabled/zz-demo.conf \
  && a2enmod headers
+# Drupal core ships web/robots.txt; add the demo's own rules to it.
+RUN cat docker/robots.demo.txt >> web/robots.txt
 COPY web/modules/custom /opt/drupal/web/modules/custom
 COPY web/themes/custom /opt/drupal/web/themes/custom
 
